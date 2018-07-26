@@ -32,11 +32,6 @@ export default new Router({
       component: reviews
     },
     {
-      path: '/reviews',
-      name: 'reviews',
-      component: reviews
-    },
-    {
       path: '/concerts',
       name: 'concerts',
       component: concerts

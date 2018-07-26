@@ -4,9 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueI18n from 'vue-i18n'
-// import 'styles/reset.css'
-// import 'styles/border.css'
+import 'styles/reset.css'
+import 'styles/border.css'
 import BootstrapVue from 'bootstrap-vue'
+import VueResource from 'vue-resource'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import {
@@ -14,6 +15,7 @@ import {
 } from '@/common/cookie'
 
 Vue.config.productionTip = false;
+Vue.use(VueResource);
 Vue.use(VueI18n);
 Vue.use(BootstrapVue);
 const i18n = new VueI18n({

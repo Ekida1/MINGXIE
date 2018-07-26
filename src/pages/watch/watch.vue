@@ -9,4 +9,7 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
+.basement {
+  margin-top: 126px;
+}
 </style>

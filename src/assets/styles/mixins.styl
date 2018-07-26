@@ -6,3 +6,35 @@ borderlineright()
   border-right: solid 1px #e6e6e6;
 borderlinebottom()
   border-bottom: solid 1px #e6e6e6;
+scrollBarStyle()
+    /* 这里设置了浏览器滑动条的样式，此时为蓝色 */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    background-color: transparent;
+  }
+
+  /* 定义滚动条轨道 内阴影+圆角 */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+  }
+
+  /* 定义滑块 内阴影+圆角 */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
+getTriangleImg() {
+  background-image: url('/static/img/triangle.png');
+}
+url('/static/img/triangle.png')
+titleFontFamily()
+  @font-face
+    font-family: 'titleFont';
+    src: url('/font/caslontitlingmt.ttf') format('truetype'),/* IE9+,可以是具体的实际链接 */
+
+timeTitleFontFamily()
+ @font-face
+    font-family: 'timeTitleFont';
+    src:url('/font/Riccione-XlightIta.ttf') format('truetype')

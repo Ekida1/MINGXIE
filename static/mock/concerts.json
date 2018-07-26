@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "data": {
+    "ticketsList": [{
+        "id": "0001",
+        "timeTitle": "20 July 2018, 20:20",
+        "textTitle": "Mariinsky Theatre",
+        "textContent": "BWagner arr. Liszt Isolde's Liebestod, Liszt Sonata, Schubert Moment Musical No.2,Schubert arr. Liszt Valse caprice No.6,Prokofiev Sonata No.6"
+      },
+      {
+        "id": "0002",
+        "timeTitle": "20 July 2018, 20:20",
+        "textTitle": "Mariinsky Theatre",
+        "textContent": "BWagner arr. Liszt Isolde's Liebestod, Liszt Sonata, Schubert Moment Musical No.2,Schubert arr. Liszt Valse caprice No.6,Prokofiev Sonata No.6"
+      },
+      {
+        "id": "0003",
+        "timeTitle": "20 July 2018, 20:20",
+        "textTitle": "Mariinsky Theatre",
+        "textContent": "BWagner arr. Liszt Isolde's Liebestod, Liszt Sonata, Schubert Moment Musical No.2,Schubert arr. Liszt Valse caprice No.6,Prokofiev Sonata No.6"
+      },
+      {
+        "id": "0004",
+        "timeTitle": "20 July 2018, 20:20",
+        "textTitle": "Mariinsky Theatre",
+        "textContent": "BWagner arr. Liszt Isolde's Liebestod, Liszt Sonata, Schubert Moment Musical No.2,Schubert arr. Liszt Valse caprice No.6,Prokofiev Sonata No.6"
+      }, {
+        "id": "0005",
+        "timeTitle": "20 July 2018, 20:20",
+        "textTitle": "Mariinsky Theatre",
+        "textContent": "BWagner arr. Liszt Isolde's Liebestod, Liszt Sonata, Schubert Moment Musical No.2,Schubert arr. Liszt Valse caprice No.6,Prokofiev Sonata No.6"
+      },
+      {
+        "id": "0006",
+        "timeTitle": "20 July 2018, 20:20",
+        "textTitle": "Mariinsky Theatre",
+        "textContent": "BWagner arr. Liszt Isolde's Liebestod, Liszt Sonata, Schubert Moment Musical No.2,Schubert arr. Liszt Valse caprice No.6,Prokofiev Sonata No.6"
+      }
+    ]
+  }
+}

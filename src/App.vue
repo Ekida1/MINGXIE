@@ -42,7 +42,9 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
+    <keep-alive>
     <router-view/>
+    </keep-alive>
   </div>
 </template>
 
@@ -52,7 +54,7 @@ export default {
   name: "App",
   data() {
     return {
-      isActive: "home"
+      isActive: this.$route.name
     };
   },
   methods: {
@@ -87,13 +89,18 @@ export default {
           break;
       }
     }
-  }
+  },
+  mounted() {}
 };
 </script>
 
 <style lang="stylus" scoped>
+@import '~styles/varibles.styl';
+@import '~styles/mixins.styl';
+
+// titleFontFamily();
 #app >>> .navbar-dark .navbar-toggler-icon {
-  background-image: url('../static/img/row.png');
+  background-image: url('/static/img/row.png');
 }
 
 #app >>> .fixed-top {
@@ -110,7 +117,10 @@ export default {
     text-align: center;
     line-height: 70px;
     font-size: 40px;
-    color: #7D734E;
+    // font-family: 'titleFont';
+    color: $Probrown;
+    z-index: 1030;
+    cursor: default;
   }
 
   .header-item {
@@ -126,9 +136,12 @@ export default {
     padding: 0 20px;
   }
 
+  .drop-down-media >>> .dropdown-toggle::after {
+  }
+
   .drop-down-media >>> span:hover {
     color: #171718 !important;
-    border-bottom: 2px solid #867A5E;
+    border-bottom: 2px solid $Probrown;
   }
 
   .drop-down-media >>> span {
@@ -144,7 +157,7 @@ export default {
   }
 
   .drop-down-media >>> .dropdown-item > a:hover {
-    border-bottom: 2px solid #867A5E;
+    border-bottom: 2px solid $Probrown;
   }
 
   .drop-down-media >>>.dropdown-menu {
@@ -154,20 +167,20 @@ export default {
   .item-active {
     .router-link-active {
       color: #171718 !important;
-      border-bottom: 2px solid #867A5E;
+      border-bottom: 2px solid $Probrown;
       font-weight: bolder;
     }
   }
 
   .item-active >>> span {
     color: #171718 !important;
-    border-bottom: 2px solid #867A5E;
+    border-bottom: 2px solid $Probrown;
     font-weight: bolder;
   }
 
   .header-item > a > a:hover {
     color: #171718 !important;
-    border-bottom: 2px solid #867A5E;
+    border-bottom: 2px solid $Probrown;
   }
 }
 
