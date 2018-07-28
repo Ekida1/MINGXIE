@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "data": {
+    "musicList": [{
+      "id": 1,
+      "title": "余波荡漾",
+      "artist": "田馥甄",
+      "file": "/static/music/余波荡漾.mp3",
+      "cid": "26310839"
+    }, {
+      "id": 2,
+      "title": "American (feat. The Cast of RuPau American (feat. The Cast of RuPau American (feat. The Cast of RuPau",
+      "artist": "Ariana Grande",
+      "file": "/static/music/American (feat. The Cast of RuPau.m4a",
+      "cid": "26745167"
+    }, {
+      "id": 3,
+      "title": "Too Good to Goodbyes",
+      "artist": "Sam Smith",
+      "file": "/static/music/Too Good to Goodbyes.mp3",
+      "cid": "26745167"
+    }, {
+      "id": 4,
+      "title": "0932",
+      "artist": "陈小春",
+      "file": "/static/music/0932.mp3",
+      "cid": "1466246"
+    }, {
+      "id": 5,
+      "title": "Rhiannon",
+      "artist": "Fleetwood Mac",
+      "file": "/static/music/Rhiannon.mp3",
+      "cid": "1851993"
+    }, {
+      "id": 6,
+      "title": "恋我癖",
+      "artist": "蔡依林",
+      "file": "/static/music/恋我癖.mp3",
+      "cid": "26669586"
+    }]
+
+  }
+}

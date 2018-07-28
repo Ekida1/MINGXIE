@@ -52,8 +52,26 @@ function getConcertsInfo() {
     );
   });
 }
+
+function getMusicFile() {
+  return new Promise((resolve, reject) => {
+    Vue.http({
+      url: "./api/music.json",
+      methods: "GET"
+    }).then(
+      res => {
+        res = res.body;
+        resolve(res)
+      },
+      err => {
+        reject(err)
+      }
+    );
+  });
+}
 export {
   getPhotosListData,
   getAboutText,
-  getConcertsInfo
+  getConcertsInfo,
+  getMusicFile
 }

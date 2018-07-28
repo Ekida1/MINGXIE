@@ -1,46 +1,57 @@
 <template>
 <div class="basement">
   <div class="listen-img"></div>
-  <div class="sk-player" id="skPlayer" style="position:absolute;right:10px;top:150px;"></div>
+  <div id="player"></div>
+  <music-box class="muisc-box" :musicList="musicList" @checkedMusic="playMusic" @SwitchMusic="playMusic"></music-box>
 </div>
 </template>
 <script>
-import skPlayer from "skPlayer";
+import musicBox from "./muiscComponent/musicBox";
+import { getMusicFile } from "common/request/request";
 export default {
   name: "listen",
-  data() {
-    return {};
+  components: {
+    musicBox
   },
-  methods: {},
-  mounted() {
-    var player = new skPlayer({
-      autoplay: true,
-      //可选项,自动播放,默认为false,true/false
-      listshow: true,
-      //可选项,列表显示,默认为true,true/false
-      mode: "listloop",
-      //可选项,循环模式,默认为'listloop'
-      //'listloop',列表循环
-      //'singleloop',单曲循环
-      music: {
-        //必需项,音乐配置
-        type: "file",
-        //必需项,自配置文件方式指定填'file'
-        source: [
-          //必需项,音乐文件数组
-          {
-            name: "0932",
-            //必需项,歌名
-            author: "陈小春",
-            //必需项,歌手
-            src: "/static/music/0932.mp3",
-            //必需项,音乐文件
-            cover: "/static/music/cover/0932.jpg"
-            //必需项,封面图片
-          }
-        ]
+  data() {
+    return {
+      musicList: Array
+    };
+  },
+  methods: {
+    playMusic(item, isfirst) {
+      if (isfirst === "first") {
+        $("#player").jPlayer("setMedia", {
+          mp3: item.file
+        });
+      } else {
+        $("#player")
+          .jPlayer("setMedia", {
+            mp3: item.file
+          })
+          .jPlayer("play");
       }
-    });
+    }
+  },
+  mounted() {},
+  activated() {
+    getMusicFile()
+      .then(res => {
+        if (res.success && res.data) {
+          const data = res.data;
+          this.musicList = data.musicList;
+        }
+        err => {
+          console.log("获取音乐信息失败，失败报错:", err);
+        };
+      })
+      .then(() => {
+        $("#player").jPlayer({
+          supplied: "mp3", //默认支持MP3 M4A
+          wmode: "window"
+        });
+        this.playMusic(this.musicList[0], "first"); //一进来先选中第一首歌曲
+      });
   }
 };
 </script>
@@ -57,6 +68,14 @@ export default {
     background-size: 1133px 721px;
     background-position: -68px 27px;
     // background-attachment: fixed;
+  }
+
+  .muisc-box {
+    // 暂定定位
+    position: absolute;
+    top: 160px;
+    right: 100px;
+    width: 400px;
   }
 }
 </style>
