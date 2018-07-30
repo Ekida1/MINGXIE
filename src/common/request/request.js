@@ -19,6 +19,23 @@ function getPhotosListData() {
   });
 }
 
+function getNewsListData() {
+  return new Promise((resolve, reject) => {
+    Vue.http({
+      url: "./api/news.json",
+      methods: "GET"
+    }).then(
+      res => {
+        res = res.body;
+        resolve(res);
+      },
+      err => {
+        reject(err);
+      }
+    );
+  });
+}
+
 function getAboutText() {
   return new Promise((resolve, reject) => {
     Vue.http({
@@ -71,6 +88,7 @@ function getMusicFile() {
 }
 export {
   getPhotosListData,
+  getNewsListData,
   getAboutText,
   getConcertsInfo,
   getMusicFile

@@ -63,10 +63,10 @@ export default {
   .listen-img {
     width: 100%;
     height: calc(100vh - 126px);
-    background-image: url('/static/img/listen.jpg');
+    background-image: url('/static/img/listen.png');
     background-repeat: no-repeat;
-    background-size: 1133px 721px;
-    background-position: -68px 27px;
+    background-size: cover;
+    background-position: 0px 3px;
     // background-attachment: fixed;
   }
 

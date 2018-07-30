@@ -16,11 +16,10 @@ export default {
   .home-img {
     width: 100%;
     height: 100vh;
-    background-image: url('/static/img/home.jpg');
+    background-image: url('/static/img/home.png');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 65%;
-    // background-attachment: fixed;
+    background-size: contain;
+    background-position: 0px 34px;
   }
 
   .instagram {

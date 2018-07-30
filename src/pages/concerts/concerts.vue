@@ -47,16 +47,15 @@ export default {
 // timeTitleFontFamily();
 .basement {
   margin-top: 126px;
-  background-color: #020202;
+  background-color: #121419;
   overflow: hidden;
 
   .concerts-img {
     width: 100%;
     height: calc(100vh - 126px);
-    background-image: url('/static/img/about.jpg');
+    background-image: url('/static/img/concerts.png');
     background-repeat: no-repeat;
-    background-size: 1330px 902px;
-    background-position: -245px -60px;
+    background-size: contain;
   }
 
   .text-box {

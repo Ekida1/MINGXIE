@@ -10,13 +10,23 @@
         <span class="total-time">{{totalTime}}</span>
         </div>
 
-      <progress-bar :progressbar="progressbar" :changeProgressHandler="changeProgressHandler" :onPlay="onPlay"></progress-bar>
+      <progress-bar :progressbar="progressbar"
+       :changeProgressHandler="changeProgressHandler"
+        :onPlay="onPlay"></progress-bar>
 
       <div class="music-controller">
         <div class="presong" @click="shiftMusic('pre')"></div>
         <div class="play" v-if="!isplay" @click="togglePlay"></div>
         <div class="pause" v-else @click="togglePlay"></div>
         <div class="nextsong" @click="shiftMusic('next')"></div>
+      </div>
+      <div class="volume-controller">
+        <div class="icon-volume"></div>
+        <div class="volume-wrapper">
+          <progress-bar :progressbar="volume"
+          :changeProgressHandler="changeVolumeHandler"
+           ></progress-bar>
+        </div>
       </div>
     </div>
     <div class="music-box-body">
@@ -50,7 +60,8 @@ export default {
       isplay: false,
       duration: null,
       runTime: null,
-      totalTime: null
+      totalTime: null,
+      volume: 0
     };
   },
   methods: {
@@ -65,6 +76,9 @@ export default {
     changeProgressHandler(progress) {
       // console.log('from root widget', progress);
       $("#player").jPlayer("play", this.duration * progress);
+    },
+    changeVolumeHandler(progress) {
+      $("#player").jPlayer("volume", progress);
     },
     onPlay() {
       if (!this.isplay) {
@@ -83,6 +97,7 @@ export default {
       return `${min}:${sec}`;
     },
     checkedMusicItem(music) {
+      if (this.activeMusicItem === this.musicList.indexOf(music)) return;
       this.$emit("checkedMusic", music);
       this.currentMusicItem = this.musicList[this.musicList.indexOf(music)];
       this.activeTitle = music.title;
@@ -119,6 +134,7 @@ export default {
     this.currentMusicItem = this.musicList;
     $("#player").bind($.jPlayer.event.timeupdate, e => {
       this.duration = e.jPlayer.status.duration; //获取音频总时长
+      this.volume = e.jPlayer.options.volume * 100;
       let _progress = e.jPlayer.status.currentPercentAbsolute;
       this.progressbar = _progress;
       this.runTime = this.formatTime(
@@ -126,10 +142,15 @@ export default {
       );
       this.totalTime = this.formatTime(this.duration);
     });
+    $("#player").bind($.jPlayer.event.ended, e => {
+      //绑定一个事件，在音乐结束的时候，自动切换到下一首
+      this.shiftMusic("next");
+    });
   },
   deactivated() {
     this.isplay = false;
     $("#player").unbind($.jPlayer.event.timeupdate);
+    $("#player").unbind($.jPlayer.event.ended);
   }
 };
 </script>
@@ -205,6 +226,29 @@ export default {
       background-size: cover;
       background-repeat: no-repeat;
       cursor: pointer;
+    }
+  }
+
+  .volume-controller {
+    width: 100px;
+    position: absolute;
+    left: 275px;
+    top: 50px;
+
+    .icon-volume {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      background-image: url('/static/img/volume.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .volume-wrapper {
+      position: absolute;
+      top: -25px;
+      left: 28px;
+      width: 70px;
     }
   }
 }

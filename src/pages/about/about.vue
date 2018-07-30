@@ -39,6 +39,7 @@ export default {
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
 
+allTextFontFamily();
 scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
 
 .basement {
@@ -48,11 +49,9 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
   .about-img {
     width: 100%;
     height: calc(100vh - 126px);
-    background-image: url('/static/img/about.jpg');
+    background-image: url('/static/img/about.png');
     background-repeat: no-repeat;
-    background-size: 1330px 902px;
-    background-position: -245px -50px;
-    // background-attachment: fixed;
+    background-size: contain;
   }
 
   .text-box {
@@ -69,15 +68,16 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
       height: calc(100vh - 150px);
       padding: 20px 30px;
       overflow: auto;
+      font-family: 'textFont';
 
       .text-title {
         text-decoration: underline;
-        font-size: 13px;
+        font-size: 15px;
         margin-bottom: 25px;
       }
 
       .text-content {
-        font-size: 14px;
+        font-size: 17px;
       }
     }
 

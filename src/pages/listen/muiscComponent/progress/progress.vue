@@ -12,10 +12,10 @@ export default {
   methods: {
     changeProgress(e) {
       let progressline = this.$refs.progressline;
-      let progressbar =
+      let progress =
         (e.clientX - progressline.getBoundingClientRect().left) /
         progressline.clientWidth;
-      this.changeProgressHandler && this.changeProgressHandler(progressbar);
+      this.changeProgressHandler(progress);
       this.onPlay && this.onPlay();
     }
   }

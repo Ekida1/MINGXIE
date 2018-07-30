@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="banner">MING &nbsp; XIE</div>
-    <b-navbar toggleable="md" type="dark" fixed="top" variant="light">
+    <b-navbar toggleable="md" type="dark" fixed="top" variant="white">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <!-- <b-navbar-brand class="logo" @click="checkedItem('home')"><router-link to="/home">MINGXIE</router-link></b-navbar-brand> -->
       <b-collapse is-nav id="nav_collapse" style="justify-content: center">
@@ -98,7 +98,8 @@ export default {
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
 
-// titleFontFamily();
+titleFontFamily();
+
 #app >>> .navbar-dark .navbar-toggler-icon {
   background-image: url('/static/img/row.png');
 }
@@ -113,11 +114,11 @@ export default {
     top: 0;
     width: 100%;
     height: 70px;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     text-align: center;
     line-height: 70px;
     font-size: 40px;
-    // font-family: 'titleFont';
+    font-family: 'titleFont';
     color: $Probrown;
     z-index: 1030;
     cursor: default;

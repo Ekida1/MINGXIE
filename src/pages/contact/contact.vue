@@ -38,10 +38,10 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
   .contact-img {
     width: 100%;
     height: calc(100vh - 126px);
-    background-image: url('/static/img/contact.jpg');
+    background-image: url('/static/img/contact.png');
     background-repeat: no-repeat;
-    background-size: 1312px 875px;
-    background-position: 0px -105px;
+    background-size: 1559px 877px;
+    background-position: 0px -154px;
   }
 
   .text-box {
