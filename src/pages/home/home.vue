@@ -12,14 +12,17 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
+@import '~styles/varibles.styl';
+@import '~styles/mixins.styl';
+
 .basement {
   .home-img {
     width: 100%;
     height: 100vh;
-    background-image: url('/static/img/home.png');
+    background-image: url('/static/img/newhome.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 0px 34px;
+    background-size: 1536px 732px;
+    background-position: 0px 20px;
   }
 
   .instagram {
@@ -37,7 +40,7 @@ export default {
     content: '';
     width: 0.11rem;
     height: 50%;
-    background-color: #7d734e;
+    background-color: $Probrown;
     position: absolute;
     left: 157%;
     top: 25%;
@@ -58,7 +61,7 @@ export default {
     content: '';
     width: 0.11rem;
     height: 50%;
-    background-color: #7d734e;
+    background-color: $Probrown;
     position: absolute;
     left: 157%;
     top: 25%;

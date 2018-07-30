@@ -2,6 +2,15 @@ ellipsis()
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+multEllipsis()
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-line-clamp: 4;
+  -moz-box-orient: vertical;
 borderlineright()
   border-right: solid 1px #e6e6e6;
 borderlinebottom()
@@ -43,7 +52,7 @@ allTextFontFamily()
 @font-face
     font-family: 'textFont';
     src:url('/font/Times New Roman.ttf') format('truetype')
-newsTitleFontFamily()
+reviewsTitleFontFamily()
 @font-face
-    font-family: 'newsTitleFont';
+    font-family: 'reviewsTitleFont';
     src:url('/font/Times New Roman Bold Italic.ttf') format('truetype')

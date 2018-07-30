@@ -98,7 +98,7 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
     content: '';
     width: 0.11rem;
     height: 50%;
-    background-color: #7d734e;
+    background-color: $Probrown;
     position: absolute;
     left: 157%;
     top: 25%;
@@ -119,7 +119,7 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
     content: '';
     width: 0.11rem;
     height: 50%;
-    background-color: #7d734e;
+    background-color: $Probrown;
     position: absolute;
     left: 157%;
     top: 25%;

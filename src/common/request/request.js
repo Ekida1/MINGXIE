@@ -19,10 +19,10 @@ function getPhotosListData() {
   });
 }
 
-function getNewsListData() {
+function getReviewsListData() {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/news.json",
+      url: "./api/reviews.json",
       methods: "GET"
     }).then(
       res => {
@@ -88,7 +88,7 @@ function getMusicFile() {
 }
 export {
   getPhotosListData,
-  getNewsListData,
+  getReviewsListData,
   getAboutText,
   getConcertsInfo,
   getMusicFile

@@ -129,7 +129,7 @@ titleFontFamily();
     border: 0 2px solid #ffffff;
 
     a {
-      color: #171718;
+      color: $ProDark;
     }
   }
 
@@ -141,16 +141,16 @@ titleFontFamily();
   }
 
   .drop-down-media >>> span:hover {
-    color: #171718 !important;
+    color: $ProDark !important;
     border-bottom: 2px solid $Probrown;
   }
 
   .drop-down-media >>> span {
-    color: #171718;
+    color: $ProDark;
   }
 
   .drop-down-media >>> .dropdown-item > a {
-    color: #171718 !important;
+    color: $ProDark !important;
 
     a {
       border-bottom: 2px solid #ffffff;
@@ -167,20 +167,20 @@ titleFontFamily();
 
   .item-active {
     .router-link-active {
-      color: #171718 !important;
+      color: $ProDark !important;
       border-bottom: 2px solid $Probrown;
       font-weight: bolder;
     }
   }
 
   .item-active >>> span {
-    color: #171718 !important;
+    color: $ProDark !important;
     border-bottom: 2px solid $Probrown;
     font-weight: bolder;
   }
 
   .header-item > a > a:hover {
-    color: #171718 !important;
+    color: $ProDark !important;
     border-bottom: 2px solid $Probrown;
   }
 }

@@ -51,7 +51,7 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
     height: calc(100vh - 126px);
     background-image: url('/static/img/about.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 1357px 633px;
   }
 
   .text-box {
@@ -80,16 +80,42 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
         font-size: 17px;
       }
     }
+  }
+}
 
-    .text-container:after {
-      content: '';
-      width: 2px;
-      height: 100%;
-      background-color: #ffffff;
-      position: absolute;
-      left: 100%;
-      top: 0%;
+@media screen and (min-width: 768px) and (max-width: 1135px) {
+  .text-box {
+    width: 400px !important;
+
+    .text-container {
+      width: 390px !important;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-img {
+    background-image: url('/static/img/phoneAbout.jpg') !important;
+    background-size: 411px !important;
+  }
+
+  .text-box {
+    position: relative !important;
+    top: -250px !important;
+    right: 10px !important;
+    width: 383px !important;
+    background-image: none !important;
+
+    .text-container {
+      width: 394px !important;
+      height: auto !important;
+    }
+  }
+}
+
+@media screen and (min-height: 750px) {
+  .text-box {
+    top: -350px !important;
   }
 }
 </style>

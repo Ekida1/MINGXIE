@@ -108,20 +108,20 @@ export default {
     padding: 0 20px;
 
     a {
-      color: #171718;
+      color: $ProDark;
     }
   }
 
   .item-active {
     .router-link-active {
-      color: #171718 !important;
+      color: $ProDark !important;
       border-bottom: 2px solid #867A5E;
       font-weight: bolder;
     }
   }
 
   .header-item > a > a:hover {
-    color: #171718 !important;
+    color: $ProDark !important;
     border-bottom: 2px solid #867A5E;
   }
 }

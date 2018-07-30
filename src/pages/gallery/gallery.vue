@@ -1,14 +1,17 @@
 <template>
   <div class="basement">
-    <div class="gallery-title">
-      <div class="gallery-text">Gallery</div>
+    <div class="gallery-header">
+      <div class="gallery-content">
+        <div class="option-item on-stage" :class="{'active-item': 'onStage' === galleryCategory }" @click="checkedCategory('onStage')">On Stage</div>
+        <div class="option-item off-stage" :class="{'active-item': 'offStage' === galleryCategory }" @click="checkedCategory('offStage')">Off Stage</div>
+        <div class="option-item Vision" :class="{'active-item': 'Vision' === galleryCategory }" @click="checkedCategory('Vision')">Vision</div>
+      </div>
     </div>
     <ul class="photo-list">
       <li v-for="photo in photosList" :key="photo.id" class="img-container">
         <div class="overlay">
            </div>
         <img :src="photo.imgUrl" alt="">
-
       </li>
     </ul>
     <div class="back-to-top" title="back to top" v-show="toTopShow" @click="handleScrollToTop"></div>
@@ -22,10 +25,14 @@ export default {
   data() {
     return {
       photosList: [],
-      toTopShow: false
+      toTopShow: false,
+      galleryCategory: "onStage"
     };
   },
   methods: {
+    checkedCategory(type) {
+      this.galleryCategory = type;
+    },
     showScrollToTop() {
       const top =
         document.documentElement.scrollTop ||
@@ -79,22 +86,57 @@ export default {
 .basement {
   margin-top: 126px;
 
-  .gallery-title {
+  .gallery-header {
     width: 100%;
-    height: 145px;
-    line-height: 145px;
+    height: 100px;
     text-align: center;
 
-    .gallery-text {
-      display: inline;
-      font-size: 36px;
-      color: $Probrown;
-      padding-bottom: 10px;
-      border-bottom: 1.5px solid $Probrown;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      font-style: normal;
-      cursor: default;
+    .gallery-content {
+      display: flex;
+      // justify-content: space-around;
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 50px;
+      margin: 0 auto;
+      border: 1.5px solid $ProDark;
+      width: 250px;
+      height: 35px;
+
+      .option-item {
+        line-height: 32px;
+        flex-grow: 1;
+        cursor: pointer;
+      }
+
+      .option-item:hover {
+        color: $Probrown;
+      }
+
+      .active-item {
+        color: $Probrown;
+        font-weight: bold;
+      }
+    }
+
+    .gallery-content:before {
+      content: '';
+      width: 1.5px;
+      height: 68%;
+      background-color: $ProDark;
+      position: relative;
+      left: 88px;
+      top: 6px;
+    }
+
+    .gallery-content:after {
+      content: '';
+      width: 1.5px;
+      height: 68%;
+      background-color: #171718;
+      position: relative;
+      right: 65px;
+      top: 6px;
     }
   }
 

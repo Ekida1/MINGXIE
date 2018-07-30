@@ -6,10 +6,11 @@
       <li class="ticket-item" v-for="ticket in ticketsList" :key="ticket.id">
         <div class="time-title">{{ticket.timeTitle}}</div>
         <div class="text-title">{{ticket.textTitle}}</div>
+        <div class="location-title">{{ticket.location}}</div>
         <div class="text-content">{{ticket.textContent}}</div>
         <div class="tickets-btn-wrapper">
         <div class="left-triangle"></div>
-        <div class="tickets-btn">TICKETS</div>
+        <div class="tickets-btn">Ticket</div>
         <div class="right-triangle"></div>
         </div>
       </li>
@@ -55,19 +56,20 @@ export default {
     height: calc(100vh - 126px);
     background-image: url('/static/img/concerts.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 1357px 633px;
   }
 
   .text-box {
     position: absolute;
     top: 125px;
     right: 120px;
-    width: 573px;
-    background-image: linear-gradient(to left, rgba(255 250 250, 0), rgba(255 250 250, 0.22));
+    width: 638px;
+    background-image: linear-gradient(to left, rgba(255 250 250, 0), rgba(255 250 250, 0.12));
     color: #ffffff;
     line-height: 26px;
 
     .tickets-list {
+      text-align: center;
       width: 553px;
       height: calc(100vh - 161px);
       padding: 0px 30px;
@@ -78,14 +80,20 @@ export default {
         border-bottom: 1px solid #ffffff;
 
         .time-title {
-          font-size: 30px;
+          font-size: 18px;
           // font-family: 'timeTitleFont';
-          padding: 20px 0;
+          padding-top: 20px;
         }
 
         .text-title {
-          font-size: 30px;
+          font-size: 20px;
           padding: 15px 0;
+          color: $Probrown;
+        }
+
+        .location-title {
+          font-size: 20px;
+          color: $Probrown;
         }
 
         .text-content {
@@ -96,30 +104,13 @@ export default {
           display: flex;
 
           .tickets-btn {
-            font-size: 25px;
-            margin: 10px 0 30px 0;
-            padding: 5px 0 5px 0;
-            border-top: 1.5px solid #7D734E;
-            border-bottom: 1.5px solid #7D734E;
-            cursor: pointer;
-          }
-
-          .left-triangle {
-            width: 28px;
-            margin-top: 15px;
-            getTriangleImg();
-            background-repeat: no-repeat;
-            background-size: contain;
-            cursor: pointer;
-          }
-
-          .right-triangle {
-            width: 28px;
-            margin-top: 15px;
-            getTriangleImg();
-            transform: rotateY(180deg);
-            background-repeat: no-repeat;
-            background-size: contain;
+            background-color: $Probrown;
+            font-size: 15px;
+            width: 20%;
+            height: 30px;
+            line-height: 30px;
+            margin: 10px 40% 30px 40%;
+            border-radius: 2px;
             cursor: pointer;
           }
         }
@@ -132,7 +123,7 @@ export default {
       height: 97%;
       background-color: #ffffff;
       position: absolute;
-      left: 100%;
+      left: 89%;
       top: 3%;
     }
   }
