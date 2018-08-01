@@ -2,14 +2,20 @@
 <div class="basement">
   <ul class="reviews-list">
     <li class="section-item bt" v-for="(item,index) in reviewsList" :key="item.id" :style="{'flex-direction': (index+1) % 2 === 0 ? 'row-reverse' : 'row' }">
-      <div class="img-info">
-        <div class="img-content"></div>
-      </div>
-      <div class="text-info">
+            <div class="text-info">
         <p class="text-title">{{item.title}}</p>
         <p class="text-content">{{item.content}}</p>
         <div class="readmore">Read More</div>
       </div>
+      <div class="img-info">
+
+        <div class="img-container">
+
+        <!-- <div class="img-content"></div> -->
+        <img src="/static/img/reviews.jpg" alt="">
+        </div>
+      </div>
+
     </li>
   </ul>
 </div>
@@ -66,24 +72,31 @@ allTextFontFamily();
       overflow: hidden;
 
       .img-info {
-        width: 45%;
-        background-color: orange;
+        width: 55%;
+        // background-color: orange;
+        overflow: hidden;
 
-        .img-content {
+        .img-container {
           width: 100%;
-          height: 70%;
-          background-image: url('/static/img/reviews.jpg');
-          background-size: contain;
-          background-repeat: no-repeat;
-          margin: 10% auto;
+          height: 80%;
+          overflow: hidden;
+
+          // background: #E5C3B2;
+          img {
+            width: 100%;
+            clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
+            -webkit-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
+            -moz-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
+            -ms-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
+          }
         }
       }
 
       .text-info {
-        width: 55%;
+        width: 45%;
         padding: 20px 20px;
-        background-color: yellowgreen;
 
+        // background-color: yellowgreen;
         .text-title {
           font-size: 40px;
           color: $Probrown;

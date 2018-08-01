@@ -116,16 +116,67 @@ export default {
         }
       }
     }
+  }
+}
 
-    .tickets-list:after {
-      content: '';
-      width: 2px;
-      height: 97%;
-      background-color: #ffffff;
-      position: absolute;
-      left: 89%;
-      top: 3%;
+@media screen and (min-width: 768px) and (max-width: 1050px) {
+  .text-box {
+    width: 450px !important;
+    right: 30px !important;
+
+    .tickets-list {
+      width: 450px !important;
     }
+  }
+}
+
+@media screen and (min-width: 410px) and (max-width: 768px) {
+  .basement {
+    background-color: #1A1711;
+    min-height: 100vh !important;
+  }
+
+  .concerts-img {
+    background-image: url('/static/img/phoneConcerts.jpg') !important;
+    background-size: 415px !important;
+  }
+
+  .text-box {
+    position: relative !important;
+    width: 380px !important;
+    right: -17px !important;
+    top: -470px !important;
+    background-image: none !important;
+
+    .tickets-list {
+      width: 380px !important;
+      height: auto !important;
+    }
+  }
+}
+
+@media screen and (max-width: 409px) {
+  .basement {
+    background-color: #1A1711;
+    min-height: 100vh !important;
+  }
+
+  .concerts-img {
+    background-image: url('/static/img/phoneConcerts.jpg') !important;
+    background-size: 411px !important;
+  }
+
+  .text-box {
+    position: relative !important;
+    width: 380px !important;
+    right: 2px !important;
+    top: -470px !important;
+    background-image: none !important;
+  }
+
+  .tickets-list {
+    width: 380px !important;
+    height: auto !important;
   }
 }
 </style>

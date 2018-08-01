@@ -2,36 +2,31 @@
   <div class="basement">
     <div class="gallery-header">
       <div class="gallery-content">
-        <div class="option-item on-stage" :class="{'active-item': 'onStage' === galleryCategory }" @click="checkedCategory('onStage')">On Stage</div>
-        <div class="option-item off-stage" :class="{'active-item': 'offStage' === galleryCategory }" @click="checkedCategory('offStage')">Off Stage</div>
-        <div class="option-item Vision" :class="{'active-item': 'Vision' === galleryCategory }" @click="checkedCategory('Vision')">Vision</div>
+        <div class="option-item on-stage" :class="{'active-item': 'onstage' === galleryCategory }" @click="checkedCategory('onstage')">On Stage</div>
+        <div class="option-item off-stage" :class="{'active-item': 'offstage' === galleryCategory }" @click="checkedCategory('offstage')">Off Stage</div>
+        <div class="option-item Vision" :class="{'active-item': 'vision' === galleryCategory }" @click="checkedCategory('vision')">Vision</div>
       </div>
     </div>
-    <ul class="photo-list">
-      <li v-for="photo in photosList" :key="photo.id" class="img-container">
-        <div class="overlay">
-           </div>
-        <img :src="photo.imgUrl" alt="">
-      </li>
-    </ul>
+     <keep-alive>
+       <router-view/>
+     </keep-alive>
     <div class="back-to-top" title="back to top" v-show="toTopShow" @click="handleScrollToTop"></div>
   </div>
 </template>
 
 <script>
-import { getPhotosListData } from "common/request/request";
 export default {
   name: "gallery",
   data() {
     return {
-      photosList: [],
       toTopShow: false,
-      galleryCategory: "onStage"
+      galleryCategory: "onstage"
     };
   },
   methods: {
     checkedCategory(type) {
       this.galleryCategory = type;
+      this.$router.push({ path: "/gallery/" + type });
     },
     showScrollToTop() {
       const top =
@@ -59,17 +54,7 @@ export default {
       }
     }
   },
-  created() {
-    getPhotosListData().then(res => {
-      if (res.success && res.data) {
-        const data = res.data;
-        this.photosList = data.photosList;
-      }
-      err => {
-        reject(err);
-      };
-    });
-  },
+
   mounted() {
     window.addEventListener("scroll", this.showScrollToTop);
   },
@@ -93,11 +78,10 @@ export default {
 
     .gallery-content {
       display: flex;
-      // justify-content: space-around;
       position: relative;
       left: 0;
       right: 0;
-      top: 50px;
+      top: 20px;
       margin: 0 auto;
       border: 1.5px solid $ProDark;
       width: 250px;
@@ -140,41 +124,6 @@ export default {
     }
   }
 
-  .photo-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: auto 60px;
-    overflow: hidden;
-
-    .img-container {
-      margin: 20px 20px;
-      cursor: pointer;
-
-      img {
-        width: 400px;
-        height: 267px;
-      }
-    }
-
-    .img-container:hover > .overlay {
-      opacity: 1;
-      background: hsla(50, 0%, 0%, 0.6);
-      transition: 0.3s opacity ease-out;
-    }
-
-    .img-container .overlay {
-      position: absolute;
-      z-index: 99;
-      display: block;
-      width: 400px;
-      height: 267px;
-      opacity: 0;
-      overflow: hidden;
-      transition: 0.3s opacity ease-in;
-    }
-  }
-
   .back-to-top {
     position: fixed;
     bottom: 5%;
@@ -186,12 +135,6 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
-  }
-}
-
-@media screen and (max-width: 1456px) {
-  .photo-list {
-    justify-content: center !important;
   }
 }
 </style>

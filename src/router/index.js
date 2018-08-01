@@ -9,6 +9,9 @@ import video from '@/pages/video/video'
 import reviews from '@/pages/reviews/reviews'
 import contact from '@/pages/contact/contact'
 import about from '@/pages/about/about'
+import onstage from '@/pages/gallery/children/onstage'
+import offstage from '@/pages/gallery/children/offstage'
+import vision from '@/pages/gallery/children/vision'
 Vue.use(Router)
 
 export default new Router({
@@ -39,7 +42,21 @@ export default new Router({
     {
       path: '/gallery',
       name: 'gallery',
-      component: gallery
+      redirect: '/gallery/onstage',
+      component: gallery,
+      children: [{
+        path: '/gallery/onstage',
+        name: 'onstage',
+        component: onstage,
+      }, {
+        path: '/gallery/offstage',
+        name: 'offstage',
+        component: offstage,
+      }, {
+        path: '/gallery/vision',
+        name: 'vision',
+        component: vision,
+      }, ]
     },
     {
       path: '/listen',

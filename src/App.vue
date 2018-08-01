@@ -101,7 +101,7 @@ export default {
 titleFontFamily();
 
 #app >>> .navbar-dark .navbar-toggler-icon {
-  background-image: url('/static/img/row.png');
+  background-image: url('/static/img/menu.png');
 }
 
 #app >>> .fixed-top {
