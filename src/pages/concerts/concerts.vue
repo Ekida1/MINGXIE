@@ -155,7 +155,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 409px) {
+@media screen and (max-width: 414px) {
   .basement {
     background-color: #1A1711;
     min-height: 100vh !important;

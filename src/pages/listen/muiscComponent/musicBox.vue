@@ -284,4 +284,16 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 415px) {
+  .music-box-head {
+    opacity: 1 !important;
+  }
+
+  .music-box-body {
+    height: calc(100vh - 400px) !important;
+    position: absolute !important;
+    bottom: 89px !important;
+  }
+}
 </style>

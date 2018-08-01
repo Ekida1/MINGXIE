@@ -54,7 +54,9 @@ export default {
       }
     }
   },
-
+  activated() {
+    this.galleryCategory = "onstage";
+  },
   mounted() {
     window.addEventListener("scroll", this.showScrollToTop);
   },

@@ -78,4 +78,12 @@ export default {
     width: 400px;
   }
 }
+
+@media screen and (max-width: 415px) {
+  .muisc-box {
+    top: 645px !important;
+    right: 0px !important;
+    width: 100% !important;
+  }
+}
 </style>

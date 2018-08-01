@@ -2,10 +2,44 @@ import Vue from 'vue'
 // import VueResource from 'vue-resource'
 // Vue.use(VueResource);
 
-function getPhotosListData() {
+function getonStagePhotosListData() {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/gallery.json",
+      url: "./api/onstage.json",
+      methods: "GET"
+    }).then(
+      res => {
+        res = res.body;
+        resolve(res);
+      },
+      err => {
+        reject(err);
+      }
+    );
+  });
+}
+
+function getoffStagePhotosListData() {
+  return new Promise((resolve, reject) => {
+    Vue.http({
+      url: "./api/offstage.json",
+      methods: "GET"
+    }).then(
+      res => {
+        res = res.body;
+        resolve(res);
+      },
+      err => {
+        reject(err);
+      }
+    );
+  });
+}
+
+function getVisonPhotosListData() {
+  return new Promise((resolve, reject) => {
+    Vue.http({
+      url: "./api/vision.json",
       methods: "GET"
     }).then(
       res => {
@@ -87,7 +121,9 @@ function getMusicFile() {
   });
 }
 export {
-  getPhotosListData,
+  getonStagePhotosListData,
+  getoffStagePhotosListData,
+  getVisonPhotosListData,
   getReviewsListData,
   getAboutText,
   getConcertsInfo,

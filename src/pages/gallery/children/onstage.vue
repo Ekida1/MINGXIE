@@ -17,17 +17,16 @@
 </template>
 
 <script>
-import { getPhotosListData } from "common/request/request";
+import { getonStagePhotosListData } from "common/request/request";
 export default {
   name: "onstage",
   data() {
     return {
-      bannerPhoto: [],
       photosList: []
     };
   },
   created() {
-    getPhotosListData().then(res => {
+    getonStagePhotosListData().then(res => {
       if (res.success && res.data) {
         const data = res.data;
         this.photosList = data.photosList;
@@ -48,6 +47,7 @@ export default {
   .img-banner {
     display: flex;
     justify-content: center;
+    cursor: pointer;
   }
 
   .photo-list {
