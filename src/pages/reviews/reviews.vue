@@ -12,7 +12,7 @@
         <div class="img-container">
 
         <!-- <div class="img-content"></div> -->
-        <img src="/static/img/reviews.jpg" alt="">
+        <img :src="item.imgUrl" alt="">
         </div>
       </div>
 

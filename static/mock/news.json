@@ -1,16 +1,16 @@
 {
   "success": true,
   "data": {
-    "reviewsList": [{
-      "imgUrl": "/static/img/reviews.jpg",
+    "newsList": [{
+      "imgUrl": "/static/img/news.jpg",
       "title": "Xie,virtuoso que se 'apodera' de la imaginacion",
       "content": "En la inex orable busqueda de la excelencia que inicio hace una decada el Teatro Colsubisdio 'Roberto Arias Perez',nuevaments se sube el telo para que el viruosismo de Ming Xie sea el que abra la temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este instrumento temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este yty"
     }, {
-      "imgUrl": "/static/img/reviews.jpg",
+      "imgUrl": "/static/img/news.jpg",
       "title": "Xie,virtuoso que se 'apodera' de la imaginacion",
       "content": "En la inex orable busqueda de la excelencia que inicio hace una decada el Teatro Colsubisdio 'Roberto Arias Perez',nuevaments se sube el telo para que el viruosismo de Ming Xie sea el que abra la temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este instrumento temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este yty"
     }, {
-      "imgUrl": "/static/img/reviews.jpg",
+      "imgUrl": "/static/img/news.jpg",
       "title": "Xie,virtuoso que se 'apodera' de la imaginacion",
       "content": "En la inex orable busqueda de la excelencia que inicio hace una decada el Teatro Colsubisdio 'Roberto Arias Perez',nuevaments se sube el telo para que el viruosismo de Ming Xie sea el que abra la temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este instrumento temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este yty"
     }]
