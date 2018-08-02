@@ -254,6 +254,8 @@ export default {
 }
 
 .music-box-body {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: calc(100vh - 261px);
   position: relative;
@@ -262,6 +264,8 @@ export default {
   overflow-y: auto;
 
   .music-list {
+    display: flex;
+    flex-direction: column;
     padding: 20px 0;
 
     .music-item {
@@ -291,9 +295,23 @@ export default {
   }
 
   .music-box-body {
-    height: calc(100vh - 400px) !important;
+    display: flex;
+    flex-direction: column-reverse;
+    height: calc(100vh - 443px) !important;
     position: absolute !important;
     bottom: 89px !important;
+    opacity: 0.9 !important;
+    background-color: #1A1711 !important;
+
+    .music-list {
+      flex-direction: column-reverse !important;
+      padding: 10px 0;
+      margin: 0;
+    }
+  }
+
+  .active-item {
+    opacity: 0.2 !important;
   }
 }
 </style>

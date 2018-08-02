@@ -19,10 +19,10 @@ export default {
   .home-img {
     width: 100%;
     height: 100vh;
-    background-image: url('/static/img/newhome.jpg');
+    background-image: url('/static/img/newnewhome.png');
     background-repeat: no-repeat;
-    background-size: 1536px 732px;
-    background-position: 0px 20px;
+    background-size: 1536px 659px;
+    background-position: 0px 87px;
   }
 
   .instagram {
@@ -76,6 +76,14 @@ export default {
     background-image: url('/static/img/soundcloud.png');
     background-repeat: no-repeat;
     background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .home-img {
+    background-image: url('/static/img/phonehome.jpg') !important;
+    background-size: 505px 681px !important;
+    background-position: -50px 130px !important;
   }
 }
 </style>

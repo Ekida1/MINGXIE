@@ -46,6 +46,23 @@ export default {
     display: flex;
     justify-content: center;
     cursor: pointer;
+
+    .overlay {
+      position: absolute;
+      z-index: 99;
+      display: block;
+      width: 880px;
+      height: 459px;
+      opacity: 0;
+      overflow: hidden;
+      transition: 0.3s opacity ease-in;
+    }
+  }
+
+  .img-banner:hover > .overlay {
+    opacity: 1;
+    background: hsla(50, 0%, 0%, 0.6);
+    transition: 0.3s opacity ease-out;
   }
 
   .photo-list {
@@ -58,6 +75,17 @@ export default {
       margin: 20px 70px;
       cursor: pointer;
 
+      .overlay {
+        position: absolute;
+        z-index: 99;
+        display: block;
+        width: 483px; // 和图片的宽度一致
+        height: 294px; // 和图片的高度一致
+        opacity: 0;
+        overflow: hidden;
+        transition: 0.3s opacity ease-in;
+      }
+
       img {
         width: 483px; // 和图片的宽度一致
         height: 294px; // 和图片的高度一致
@@ -68,17 +96,6 @@ export default {
       opacity: 1;
       background: hsla(50, 0%, 0%, 0.6);
       transition: 0.3s opacity ease-out;
-    }
-
-    .img-container .overlay {
-      position: absolute;
-      z-index: 99;
-      display: block;
-      width: 483px; // 和图片的宽度一致
-      height: 294px; // 和图片的高度一致
-      opacity: 0;
-      overflow: hidden;
-      transition: 0.3s opacity ease-in;
     }
   }
 }

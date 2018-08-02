@@ -65,9 +65,7 @@ export default {
     height: calc(100vh - 126px);
     background-image: url('/static/img/listen.png');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0px 3px;
-    // background-attachment: fixed;
+    background-size: 425px 277px;
   }
 
   .muisc-box {
@@ -80,8 +78,18 @@ export default {
 }
 
 @media screen and (max-width: 415px) {
+  .basement {
+    background-color: #1A1711 !important;
+  }
+
+  .listen-img {
+    background-image: url('/static/img/phoneListen.jpg') !important;
+    background-size: contain !important;
+  }
+
   .muisc-box {
-    top: 645px !important;
+    top: auto !important;
+    bottom: 0 !important;
     right: 0px !important;
     width: 100% !important;
   }
