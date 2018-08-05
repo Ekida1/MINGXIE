@@ -30,15 +30,18 @@
       </div>
     </div>
     <div class="music-box-body">
+      <div class="music-wrap" ref="listenListWrapper">
       <ul class="music-list">
         <li class="music-item" :class="{'active-item':musicList.indexOf(music) === activeMusicItem }" v-for="music in musicList" :key="music.id" @click="checkedMusicItem(music)">{{music.title}}</li>
       </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import ProgressBar from "./progress/progress";
+import BScroll from "better-scroll";
 export default {
   name: "musicBox",
   props: {
@@ -127,7 +130,11 @@ export default {
       }
     }
   },
+  mounted() {},
   activated() {
+    this.$nextTick(() => {
+      this.scroll = new BScroll(this.$refs.listenListWrapper, { click: true });
+    });
     // this.activeTitle = this.musicList[0].title;
     this.activeTitle = "余波荡漾"; //上面那张方式获取有bug，目前暂时先写死，如果要更新音乐，记住这里同步更新
     this.activeMusicItem = 0;
@@ -232,7 +239,7 @@ export default {
   .volume-controller {
     width: 100px;
     position: absolute;
-    left: 275px;
+    left: 255px;
     top: 50px;
 
     .icon-volume {
@@ -263,10 +270,12 @@ export default {
   opacity: 0.2;
   overflow-y: auto;
 
-  .music-list {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0;
+  .music-wrap {
+    .music-list {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+    }
 
     .music-item {
       color: #ffffff;
@@ -300,18 +309,18 @@ export default {
     height: calc(100vh - 443px) !important;
     position: absolute !important;
     bottom: 89px !important;
-    opacity: 0.9 !important;
+    opacity: 0.4 !important;
     background-color: #1A1711 !important;
 
-    .music-list {
-      flex-direction: column-reverse !important;
-      padding: 10px 0;
-      margin: 0;
-    }
-  }
+    .music-wrap {
+      overflow: hidden;
 
-  .active-item {
-    opacity: 0.2 !important;
+      .music-list {
+        flex-direction: column-reverse !important;
+        padding: 10px 0;
+        margin: 0;
+      }
+    }
   }
 }
 </style>

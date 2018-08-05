@@ -1,22 +1,42 @@
 <template>
   <div>
-          <div class="photo-list">
-      <div v-for="(photo,index) in photosList" :key="photo.id" class="img-container" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
+    <div class="photo-list">
+      <div v-for="(photo,index) in photosList" :key="photo.id"  @click="exhibitionShow(index)" class="img-container" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
         <div class="overlay">
         </div>
-        <img :src="photo.imgUrl" alt="">
+         <img :src="photo.thumbnail" alt="">
       </div>
+    </div>
+          <div class="pop-layer" v-if="gallaryShow">
+        <div class="close-pop" @click="closeExhibition"></div>
       </div>
+      <exhibition v-if="gallaryShow" :slideToIndex="slideToIndex" :photosList="photosList"></exhibition>
   </div>
 </template>
+
 <script>
+import exhibition from "components/exhibition/exhibition";
 import { getVisonPhotosListData } from "common/request/request";
 export default {
   name: "vision",
   data() {
     return {
-      photosList: []
+      photosList: [{}],
+      gallaryShow: false,
+      slideToIndex: 0
     };
+  },
+  components: {
+    exhibition
+  },
+  methods: {
+    exhibitionShow(index) {
+      this.gallaryShow = true;
+      this.slideToIndex = index;
+    },
+    closeExhibition() {
+      this.gallaryShow = false;
+    }
   },
   created() {
     getVisonPhotosListData().then(res => {
@@ -31,7 +51,32 @@ export default {
   }
 };
 </script>
+
 <style lang="stylus" scoped>
+.pop-layer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1900;
+  opacity: 0.6;
+  background: #303030;
+
+  .close-pop {
+    z-index: 1900;
+    background-image: url('/static/img/close.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 20px;
+    right: 240px;
+    width: 53px;
+    height: 50px;
+    cursor: pointer;
+  }
+}
+
 .photo-list {
   display: flex;
   flex-wrap: wrap;

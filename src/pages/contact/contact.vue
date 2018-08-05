@@ -2,18 +2,31 @@
 <div class="basement">
    <div class="contact-img"></div>
      <div class="text-box">
-       <div class="contact-title">For France Benlgium Luxembourg</div>
+       <div class="contact-wrapper">
+       <div class="contact-top">
+       <div style="color: #7D734E">For France Benlgium Luxembourg Switzerland/Spain/Greece</div>
        <div class="contact-info">
-         <div class="info-top">Marie Honore</div>
+         <div style="font-weight: bold">Marie Honore</div>
          <div class="info-content">
            <div class="email">mariehonore33@gmail.com</div>
            <div class="tel">+33 660 89 34 88</div>
          </div>
        </div>
+       </div>
+     <div class="contact-middle">
+       <div style="color: #7D734E">For United States</div>
+       <div style="font-weight: bold">Octavio Choy</div>
+       <div>dr.gregoriochoy@gmail.com</div>
+       <div>+1(203)895-5456</div>
+       <div>43 West 61 Street</div>
+       <div>New York,NY,10023</div>
+       <div>United States</div>
+     </div>
        <div class="contact-footer">
          <div class="footer-top">General inquiry</div>
          <div class="footer-content">Mingxiepiano@yahoo.com</div>
        </div>
+     </div>
      </div>
      <a href="https://m.youtube.com/user/KennyTse1" target="_blank"><div class="instagram"></div></a>
     <a href="https://www.instagram.com/elephancy_/" target="_blank"><div class="youtube"></div></a>
@@ -54,31 +67,43 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
     background-image: linear-gradient(to left, rgba(255 250 250, 0), rgba(255 250 250, 0.9));
     color: #333333;
     line-height: 26px;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 
-    .contact-title {
-      float: right;
-      line-height: 60px;
-      font-size: 50px;
-    }
+    .contact-wrapper {
+      text-align: right;
+      font-size: 20px;
 
-    .contact-info {
-      float: right;
-      padding: 20px 0;
-
-      .info-top {
-        font-size: 30px;
-        font-weight: bold;
+      .contact-top {
+        padding-bottom: 20px;
       }
-    }
 
-    .contact-footer {
-      float: right;
-      padding: 20px 0;
+      .contact-top:after {
+        content: '';
+        width: 20%;
+        height: 2px;
+        background-color: $Probrown;
+        position: absolute;
+        right: 30px;
+        top: 175px;
+      }
 
-      .footer-top {
-        font-size: 30px;
-        font-weight: bold;
+      .contact-middle {
+        padding: 20px 0;
+      }
+
+      .contact-middle:after {
+        content: '';
+        width: 20%;
+        height: 2px;
+        background-color: $Probrown;
+        position: absolute;
+        right: 30px;
+        top: 395px;
+      }
+
+      .contact-footer {
+        padding-top: 20px;
       }
     }
   }
@@ -134,6 +159,64 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
     background-image: url('/static/img/soundcloud.png');
     background-repeat: no-repeat;
     background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .contact-img {
+    background-image: url('/static/img/phoneContact.jpg') !important;
+    background-size: 414px 261px !important;
+    background-position: top !important;
+  }
+
+  .text-box {
+    position: absolute !important;
+    top: 386px !important;
+    right: auto !important;
+    width: 100% !important;
+    height: calc(100vh - 168px) !important;
+
+    .contact-wrapper {
+      text-align: center !important;
+
+      .contact-top:after {
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important;
+      }
+
+      .contact-middle:after {
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important;
+      }
+    }
+  }
+
+  .instagram {
+    bottom: -24% !important;
+  }
+
+  .youtube {
+    bottom: -24% !important;
+  }
+
+  .soundcloud {
+    bottom: -24% !important;
+  }
+}
+
+@media screen and (max-height: 668px) {
+  .instagram {
+    bottom: -33% !important;
+  }
+
+  .youtube {
+    bottom: -33% !important;
+  }
+
+  .soundcloud {
+    bottom: -33% !important;
   }
 }
 </style>

@@ -70,6 +70,23 @@ function getNewsListData() {
   });
 }
 
+function getDetailData() {
+  return new Promise((resolve, reject) => {
+    Vue.http({
+      url: "./api/detail.json",
+      methods: "GET"
+    }).then(
+      res => {
+        res = res.body;
+        resolve(res);
+      },
+      err => {
+        reject(err);
+      }
+    );
+  });
+}
+
 function getReviewsListData() {
   return new Promise((resolve, reject) => {
     Vue.http({
@@ -142,6 +159,7 @@ export {
   getoffStagePhotosListData,
   getVisonPhotosListData,
   getNewsListData,
+  getDetailData,
   getReviewsListData,
   getAboutText,
   getConcertsInfo,

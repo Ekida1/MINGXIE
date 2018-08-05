@@ -55,7 +55,7 @@ export default {
     }
   },
   activated() {
-    this.galleryCategory = "onstage";
+    this.galleryCategory = this.$route.name;
   },
   mounted() {
     window.addEventListener("scroll", this.showScrollToTop);
@@ -137,6 +137,7 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
+    z-index: 199;
   }
 }
 </style>

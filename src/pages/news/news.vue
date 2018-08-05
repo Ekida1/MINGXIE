@@ -5,7 +5,7 @@
             <div class="text-info">
         <p class="text-title">{{item.title}}</p>
         <p class="text-content">{{item.content}}</p>
-        <div class="readmore">Read More</div>
+        <div class="readmore" @click="toDetail">Read More</div>
       </div>
       <div class="img-info">
 
@@ -28,6 +28,11 @@ export default {
     return {
       newsList: []
     };
+  },
+  methods: {
+    toDetail() {
+      this.$router.push({ path: "/detail" });
+    }
   },
   activated() {
     getNewsListData().then(res => {

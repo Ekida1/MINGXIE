@@ -65,7 +65,7 @@ export default {
     height: calc(100vh - 126px);
     background-image: url('/static/img/listen.png');
     background-repeat: no-repeat;
-    background-size: 425px 277px;
+    background-size: contain;
   }
 
   .muisc-box {
@@ -84,7 +84,7 @@ export default {
 
   .listen-img {
     background-image: url('/static/img/phoneListen.jpg') !important;
-    background-size: contain !important;
+    background-size: 425px 277px !important;
   }
 
   .muisc-box {

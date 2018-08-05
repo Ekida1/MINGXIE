@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/pages/home/home'
 import news from '@/pages/news/news'
+import detail from '@/pages/news/detail'
 import concerts from '@/pages/concerts/concerts'
 import gallery from '@/pages/gallery/gallery'
 import listen from '@/pages/listen/listen'
@@ -27,7 +28,12 @@ export default new Router({
     {
       path: '/news',
       name: 'news',
-      component: news
+      component: news,
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: detail,
     },
     {
       path: '/reviews',

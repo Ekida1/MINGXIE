@@ -54,7 +54,7 @@ export default {
   name: "App",
   data() {
     return {
-      isActive: this.$route.name
+      isActive: this.$route.matched[0].name
     };
   },
   methods: {

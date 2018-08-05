@@ -30,6 +30,7 @@ module.exports = {
       'font': resolve('src/assets/font'),
       'common': resolve('src/common'),
       'static': resolve('static'),
+      'components': resolve('src/components')
     }
   },
   module: {

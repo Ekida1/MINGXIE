@@ -2,29 +2,56 @@
   <div>
     <div class="photo-wrap">
       <div class="img-banner">
-        <div class="overlay"></div>
-        <img :src="photosList[0].imgUrl" alt="">
+        <div class="banner-img-wrapper" @click="exhibitionShow(0)">
+          <div class="overlay"></div>
+          <img class="banner-img" :src="photosList[0].thumbnail" alt="">
+        </div>
       </div>
       <div class="photo-list">
-      <div v-for="(photo,index) in photosList" :key="photo.id" v-if="index>0" class="img-container" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
-        <div class="overlay">
+        <div v-for="(photo,index) in photosList" :key="photo.id" v-if="index>0" class="img-container" @click="exhibitionShow(index)" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
+          <div class="overlay">
+          </div>
+          <img :src="photo.thumbnail" alt="">
         </div>
-        <img :src="photo.imgUrl" alt="">
       </div>
+      <div class="pop-layer" v-if="gallaryShow">
+        <div class="close-pop" @click="closeExhibition"></div>
       </div>
     </div>
+    <exhibition v-if="gallaryShow" :slideToIndex="slideToIndex" :photosList="photosList"></exhibition>
   </div>
 </template>
 
 <script>
+import exhibition from "components/exhibition/exhibition";
 import { getonStagePhotosListData } from "common/request/request";
 export default {
   name: "onstage",
   data() {
     return {
-      photosList: []
+      photosList: [
+        {
+          // id: "0000",
+          // thumbnail: "static/img/onstagebanner.jpg"
+        }
+      ],
+      gallaryShow: false,
+      slideToIndex: 0
     };
   },
+  components: {
+    exhibition
+  },
+  methods: {
+    exhibitionShow(index) {
+      this.gallaryShow = true;
+      this.slideToIndex = index;
+    },
+    closeExhibition() {
+      this.gallaryShow = false;
+    }
+  },
+
   created() {
     getonStagePhotosListData().then(res => {
       if (res.success && res.data) {
@@ -41,17 +68,50 @@ export default {
 
 <style lang="stylus" scoped>
 .photo-wrap {
-  margin: auto 60px;
+  margin: auto 0px;
   overflow: hidden;
+
+  .pop-layer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1900;
+    opacity: 0.6;
+    background: #303030;
+
+    .close-pop {
+      z-index: 1900;
+      background-image: url('/static/img/close.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: fixed;
+      top: 20px;
+      right: 240px;
+      width: 53px;
+      height: 50px;
+      cursor: pointer;
+    }
+  }
 
   .img-banner {
     display: flex;
     justify-content: center;
-    cursor: pointer;
+
+    .banner-img-wrapper {
+      cursor: pointer;
+    }
+
+    .banner-img-wrapper:hover > .overlay {
+      opacity: 1;
+      background: hsla(50, 0%, 0%, 0.6);
+      transition: 0.3s opacity ease-out;
+    }
 
     .overlay {
       position: absolute;
-      z-index: 99;
+      z-index: 10;
       display: block;
       width: 880px;
       height: 459px;
@@ -59,12 +119,6 @@ export default {
       overflow: hidden;
       transition: 0.3s opacity ease-in;
     }
-  }
-
-  .img-banner:hover > .overlay {
-    opacity: 1;
-    background: hsla(50, 0%, 0%, 0.6);
-    transition: 0.3s opacity ease-out;
   }
 
   .photo-list {
