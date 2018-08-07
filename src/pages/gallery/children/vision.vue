@@ -89,7 +89,7 @@ export default {
 
     img {
       width: 483px; // 和图片的宽度一致
-      height: 294px; // 和图片的高度一致
+      height: 483px; // 和图片的高度一致
     }
   }
 
@@ -104,7 +104,7 @@ export default {
     z-index: 99;
     display: block;
     width: 483px; // 和图片的宽度一致
-    height: 294px; // 和图片的高度一致
+    height: 483px; // 和图片的高度一致
     opacity: 0;
     overflow: hidden;
     transition: 0.3s opacity ease-in;

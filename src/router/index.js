@@ -6,7 +6,7 @@ import detail from '@/pages/news/detail'
 import concerts from '@/pages/concerts/concerts'
 import gallery from '@/pages/gallery/gallery'
 import listen from '@/pages/listen/listen'
-import video from '@/pages/video/video'
+import watch from '@/pages/watch/watch'
 import reviews from '@/pages/reviews/reviews'
 import contact from '@/pages/contact/contact'
 import about from '@/pages/about/about'
@@ -70,9 +70,9 @@ export default new Router({
       component: listen
     },
     {
-      path: '/video',
-      name: 'video',
-      component: video
+      path: '/watch',
+      name: 'watch',
+      component: watch
     },
     {
       path: '/contact',

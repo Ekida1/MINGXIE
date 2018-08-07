@@ -9,6 +9,9 @@
           <b-nav-item class="header-item home-btn" @click="checkedItem('home')" :class="{'item-active':'home'===isActive}">
             <router-link to="/home">Home</router-link>
           </b-nav-item>
+          <b-nav-item class="header-item about-btn" @click="checkedItem('about')" :class="{'item-active':'about'===isActive}">
+            <router-link to="/about">About</router-link>
+          </b-nav-item>
           <b-nav-item-dropdown text="Latest" class="drop-down-media" :class="{'item-active':'news'===isActive||'reviews'===isActive}">
             <b-dropdown-item @click="checkedItem('news')" :class="{'item-active':'news'===isActive}">
               <router-link to="/news">News</router-link>
@@ -20,23 +23,19 @@
           <b-nav-item class="header-item concerts-btn" @click="checkedItem('concerts')" :class="{'item-active':'concerts'===isActive}">
             <router-link to="/concerts">Concerts</router-link>
           </b-nav-item>
-          <b-nav-item-dropdown text="Media" class="drop-down-media" :class="{'item-active':'gallery'===isActive||'listen'===isActive||'video'===isActive}">
+          <b-nav-item-dropdown text="Media" class="drop-down-media" :class="{'item-active':'gallery'===isActive||'listen'===isActive||'watch'===isActive}">
             <b-dropdown-item @click="checkedItem('gallery')" :class="{'item-active':'gallery'===isActive}">
               <router-link to="/gallery">Gallery</router-link>
             </b-dropdown-item>
             <b-dropdown-item @click="checkedItem('listen')" :class="{'item-active':'listen'===isActive}">
               <router-link to="/listen">Listen</router-link>
             </b-dropdown-item>
-            <b-dropdown-item @click="checkedItem('video')" :class="{'item-active':'video'===isActive}">
-              <router-link to="/video">Video</router-link>
+            <b-dropdown-item @click="checkedItem('watch')" :class="{'item-active':'watch'===isActive}">
+              <router-link to="/watch">Watch</router-link>
             </b-dropdown-item>
           </b-nav-item-dropdown>
-
           <b-nav-item class="header-item contact-btn" @click="checkedItem('contact')" :class="{'item-active':'contact'===isActive}">
             <router-link to="/contact">Contact</router-link>
-          </b-nav-item>
-          <b-nav-item class="header-item about-btn" @click="checkedItem('about')" :class="{'item-active':'about'===isActive}">
-            <router-link to="/about">About</router-link>
           </b-nav-item>
 
         </b-navbar-nav>
@@ -84,7 +83,7 @@ export default {
         case "listen":
           this.isActive = index;
           break;
-        case "video":
+        case "watch":
           this.isActive = index;
           break;
       }
