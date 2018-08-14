@@ -47,9 +47,6 @@ export default {
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
 
-reviewsTitleFontFamily();
-allTextFontFamily();
-
 .basement {
   width: 100%;
   margin-top: 126px;

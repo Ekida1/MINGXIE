@@ -28,8 +28,8 @@
        </div>
      </div>
      </div>
-     <a href="https://m.youtube.com/user/KennyTse1" target="_blank"><div class="instagram"></div></a>
-    <a href="https://www.instagram.com/elephancy_/" target="_blank"><div class="youtube"></div></a>
+     <a href="https://www.instagram.com/elephancy_/" target="_blank"><div class="instagram"></div></a>
+    <a href="https://m.youtube.com/user/KennyTse1" target="_blank"><div class="youtube"></div></a>
     <a href="https://m.soundcloud.com/user-210632041" target="_blank"><div class="soundcloud"></div></a>
 </div>
 </template>
@@ -104,6 +104,10 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
 
       .contact-footer {
         padding-top: 20px;
+
+        .footer-top {
+          color: $Probrown;
+        }
       }
     }
   }

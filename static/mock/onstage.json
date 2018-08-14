@@ -3,49 +3,29 @@
   "data": {
     "photosList": [{
         "id": "0000",
-        "thumbnail": "static/img/onstagebanner.jpg",
-        "bigImg": "static/img/bannerone.jpg",
+        "thumbnail": "static/img/onstage/onstagebanner.jpg",
+        "bigImg": "static/img/onstage/onstageGalleryBanner.jpg",
         "w": 1200,
         "h": 900
       },
       {
         "id": "0001",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
+        "thumbnail": "static/img/onstage/onstage1.jpg",
+        "bigImg": "static/img/onstage/onstage1.jpg",
         "w": 1200,
         "h": 900
       },
       {
         "id": "0002",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
+        "thumbnail": "static/img/onstage/onstage2.jpg",
+        "bigImg": "static/img/onstage/onstage2.jpg",
         "w": 1200,
         "h": 900
       },
       {
         "id": "0003",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
-        "w": 1200,
-        "h": 900
-      },
-      {
-        "id": "0004",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
-        "w": 1200,
-        "h": 900
-      }, {
-        "id": "0005",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
-        "w": 1200,
-        "h": 900
-      },
-      {
-        "id": "0006",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
+        "thumbnail": "static/img/onstage/onstage3.jpg",
+        "bigImg": "static/img/onstage/onstage3.jpg",
         "w": 1200,
         "h": 900
       }

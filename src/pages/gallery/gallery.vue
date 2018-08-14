@@ -75,7 +75,7 @@ export default {
 
   .gallery-header {
     width: 100%;
-    height: 100px;
+    height: 85px;
     text-align: center;
 
     .gallery-content {

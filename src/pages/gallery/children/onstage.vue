@@ -4,21 +4,21 @@
       <div class="img-banner">
         <div class="banner-img-wrapper" @click="exhibitionShow(0)">
           <div class="overlay"></div>
-          <img class="banner-img" :src="photosList[0].thumbnail" alt="">
+          <img class="img-big" :src="photosList[0].thumbnail" alt="">
         </div>
       </div>
       <div class="photo-list">
         <div v-for="(photo,index) in photosList" :key="photo.id" v-if="index>0" class="img-container" @click="exhibitionShow(index)" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
-          <div class="overlay">
+          <div class="overlay-item">
           </div>
-          <img :src="photo.thumbnail" alt="">
+          <img class="img-item" style="width: 483px;height: 294px" :src="photo.thumbnail" alt="">
         </div>
       </div>
       <div class="pop-layer" v-if="gallaryShow">
-        <div class="close-pop" @click="closeExhibition"></div>
+        <!-- <div class="close-pop" @click="closeExhibition"></div> -->
       </div>
     </div>
-    <exhibition v-if="gallaryShow" :slideToIndex="slideToIndex" :photosList="photosList"></exhibition>
+    <exhibition v-if="gallaryShow" :slideToIndex="slideToIndex" :photosList="photosList" @closeModal="closeExhibition"></exhibition>
   </div>
 </template>
 
@@ -113,11 +113,16 @@ export default {
       position: absolute;
       z-index: 10;
       display: block;
-      width: 880px;
-      height: 459px;
+      width: 879px;
+      height: 478px;
       opacity: 0;
       overflow: hidden;
       transition: 0.3s opacity ease-in;
+    }
+
+    .img-big {
+      width: 879px;
+      height: 478px;
     }
   }
 
@@ -131,7 +136,7 @@ export default {
       margin: 20px 70px;
       cursor: pointer;
 
-      .overlay {
+      .overlay-item {
         position: absolute;
         z-index: 99;
         display: block;
@@ -142,13 +147,13 @@ export default {
         transition: 0.3s opacity ease-in;
       }
 
-      img {
+      .img-item {
         width: 483px; // 和图片的宽度一致
         height: 294px; // 和图片的高度一致
       }
     }
 
-    .img-container:hover > .overlay {
+    .img-container:hover > .overlay-item {
       opacity: 1;
       background: hsla(50, 0%, 0%, 0.6);
       transition: 0.3s opacity ease-out;
@@ -159,6 +164,28 @@ export default {
 @media screen and (max-width: 1456px) {
   .photo-wrap {
     justify-content: center !important;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .overlay {
+    width: 325px !important;
+    height: 177px !important;
+  }
+
+  .img-big {
+    width: 325px !important;
+    height: 177px !important;
+  }
+
+  .overlay-item {
+    width: 325px !important;
+    height: 177px !important;
+  }
+
+  .img-item {
+    width: 325px !important;
+    height: 177px !important;
   }
 }
 </style>

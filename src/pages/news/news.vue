@@ -1,22 +1,19 @@
 <template>
   <div class="basement">
-      <ul class="news-list">
-    <li class="section-item bt" v-for="item in newsList" :key="item.id" >
-            <div class="text-info">
-        <p class="text-title">{{item.title}}</p>
-        <p class="text-content">{{item.content}}</p>
-        <div class="readmore" @click="toDetail">Read More</div>
-      </div>
-      <div class="img-info">
-
-        <div class="img-container">
-
-        <!-- <div class="img-content"></div> -->
-        <img :src="item.imgUrl" alt="">
+    <ul class="news-list">
+      <li class="section-item bt" v-for="item in newsList" :key="item.id">
+        <div class="img-info">
+          <div class="img-container">
+            <img :src="item.imgUrl" alt="">
+          </div>
         </div>
-      </div>
-    </li>
-  </ul>
+        <div class="text-info">
+          <p class="text-title">{{item.title}}</p>
+          <p class="text-content">{{item.content}}</p>
+          <div class="readmore" @click="toDetail">Read More</div>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -31,7 +28,9 @@ export default {
   },
   methods: {
     toDetail() {
-      this.$router.push({ path: "/detail" });
+      this.$router.push({
+        path: "/detail"
+      });
     }
   },
   activated() {
@@ -47,6 +46,7 @@ export default {
   }
 };
 </script>
+
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
@@ -66,6 +66,7 @@ export default {
 
     .section-item {
       display: flex;
+      flex-direction: row-reverse;
       width: 90%;
       height: 450px;
       padding: 25px 0;
@@ -144,6 +145,21 @@ export default {
 
   .text-info {
     width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .section-item {
+    height: 675px !important;
+
+    .img-container {
+      height: 100% !important;
+    }
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
 }
 </style>

@@ -4,13 +4,13 @@
       <div v-for="(photo,index) in photosList" :key="photo.id"  @click="exhibitionShow(index)" class="img-container" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
         <div class="overlay">
         </div>
-         <img :src="photo.thumbnail" alt="">
+         <img class="img-item" :src="photo.thumbnail" alt="">
       </div>
     </div>
           <div class="pop-layer" v-if="gallaryShow">
-        <div class="close-pop" @click="closeExhibition"></div>
+        <!-- <div class="close-pop" @click="closeExhibition"></div> -->
       </div>
-      <exhibition v-if="gallaryShow" :slideToIndex="slideToIndex" :photosList="photosList"></exhibition>
+      <exhibition v-if="gallaryShow" :slideToIndex="slideToIndex" :photosList="photosList" @closeModal="closeExhibition"></exhibition>
   </div>
 </template>
 
@@ -87,7 +87,7 @@ export default {
     margin: 20px 70px;
     cursor: pointer;
 
-    img {
+    .img-item {
       width: 483px; // 和图片的宽度一致
       height: 483px; // 和图片的高度一致
     }
@@ -114,6 +114,18 @@ export default {
 @media screen and (max-width: 1456px) {
   .photo-wrap {
     justify-content: center !important;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .overlay {
+    width: 382px !important;
+    height: 382px !important;
+  }
+
+  .img-item {
+    width: 382px !important;
+    height: 382px !important;
   }
 }
 </style>
