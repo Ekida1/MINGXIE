@@ -2,8 +2,8 @@
   <div class="basement">
     <div class="gallery-header">
       <div class="gallery-content">
-        <div class="option-item on-stage" :class="{'active-item': 'onstage' === galleryCategory }" @click="checkedCategory('onstage')">On Stage</div>
         <div class="option-item off-stage" :class="{'active-item': 'offstage' === galleryCategory }" @click="checkedCategory('offstage')">Off Stage</div>
+        <div class="option-item on-stage" :class="{'active-item': 'onstage' === galleryCategory }" @click="checkedCategory('onstage')">On Stage</div>
         <div class="option-item Vision" :class="{'active-item': 'vision' === galleryCategory }" @click="checkedCategory('vision')">Vision</div>
       </div>
     </div>
@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       toTopShow: false,
-      galleryCategory: "onstage"
+      galleryCategory: "offstage"
     };
   },
   methods: {

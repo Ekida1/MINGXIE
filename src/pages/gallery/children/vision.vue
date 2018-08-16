@@ -8,8 +8,8 @@
       </div>
     </div>
           <div class="pop-layer" v-if="gallaryShow">
-        <!-- <div class="close-pop" @click="closeExhibition"></div> -->
       </div>
+            <div class="downLoad-btn"></div>
       <exhibition v-if="gallaryShow" :slideToIndex="slideToIndex" :photosList="photosList" @closeModal="closeExhibition"></exhibition>
   </div>
 </template>
@@ -88,8 +88,8 @@ export default {
     cursor: pointer;
 
     .img-item {
-      width: 483px; // 和图片的宽度一致
-      height: 483px; // 和图片的高度一致
+      width: 433px; // 和图片的宽度一致
+      height: 433px; // 和图片的高度一致
     }
   }
 
@@ -103,12 +103,37 @@ export default {
     position: absolute;
     z-index: 99;
     display: block;
-    width: 483px; // 和图片的宽度一致
-    height: 483px; // 和图片的高度一致
+    width: 433px; // 和图片的宽度一致
+    height: 433px; // 和图片的高度一致
     opacity: 0;
     overflow: hidden;
     transition: 0.3s opacity ease-in;
   }
+}
+
+.downLoad-btn {
+  position: relative;
+  left: 91%;
+  bottom: 35px;
+  opacity: 0.7;
+  background-image: url('/static/img/download.png');
+  width: 53px;
+  height: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 199;
+}
+
+.downLoad-btn:before {
+  content: 'DownLoad All';
+  position: absolute;
+  left: -25px;
+  bottom: 50px;
+  width: 110px;
+  margin-bottom: 10px;
+  color: #000000;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 1456px) {
@@ -119,13 +144,18 @@ export default {
 
 @media screen and (max-width: 415px) {
   .overlay {
-    width: 382px !important;
-    height: 382px !important;
+    width: 325px !important;
+    height: 325px !important;
   }
 
   .img-item {
-    width: 382px !important;
-    height: 382px !important;
+    width: 325px !important;
+    height: 325px !important;
+  }
+
+  .downLoad-btn {
+    left: 71% !important;
+    bottom: 13px !important;
   }
 }
 </style>

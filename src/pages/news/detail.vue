@@ -40,6 +40,8 @@ export default {
   position: relative;
 
   .detail-content {
+    padding: 0 200px;
+
     .content-img {
       width: 100%;
       height: 300px;
@@ -47,13 +49,15 @@ export default {
     }
 
     p {
-      -moz-column-count: 2; /* Firefox */
-      -webkit-column-count: 2; /* Safari and Chrome */
-      column-count: 2;
-      -moz-column-gap: 30px; /* Firefox */
-      -webkit-column-gap: 30px; /* Safari and Chrome */
-      column-gap: 30px;
+      margin-top: 30px;
+      font-family: 'Times New Roman';
     }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .detail-content {
+    padding: 0 20px !important;
   }
 }
 </style>

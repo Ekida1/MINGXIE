@@ -3,42 +3,56 @@
   "data": {
     "photosList": [{
         "id": "0001",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
+        "thumbnail": "static/img/vision/vision1.jpg",
+        "bigImg": "static/img/vision/vision1_gallery.jpg",
         "w": 1200,
         "h": 900
       },
       {
         "id": "0002",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
+        "thumbnail": "static/img/vision/vision2.jpg",
+        "bigImg": "static/img/vision/vision2_gallery.jpg",
         "w": 1200,
         "h": 900
       },
       {
         "id": "0003",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
+        "thumbnail": "static/img/vision/vision3.jpg",
+        "bigImg": "static/img/vision/vision3_gallery.jpg",
         "w": 1200,
         "h": 900
       },
       {
         "id": "0004",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
+        "thumbnail": "static/img/vision/vision4.jpg",
+        "bigImg": "static/img/vision/vision4_gallery.jpg",
         "w": 1200,
         "h": 900
       }, {
         "id": "0005",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
+        "thumbnail": "static/img/vision/vision5.jpg",
+        "bigImg": "static/img/vision/vision5_gallery.jpg",
         "w": 1200,
         "h": 900
       },
       {
         "id": "0006",
-        "thumbnail": "static/img/little.jpg",
-        "bigImg": "static/img/one.jpg",
+        "thumbnail": "static/img/vision/vision6.jpg",
+        "bigImg": "static/img/vision/vision6_gallery.jpg",
+        "w": 1200,
+        "h": 900
+      },
+      {
+        "id": "0007",
+        "thumbnail": "static/img/vision/vision7.jpg",
+        "bigImg": "static/img/vision/vision7_gallery.jpg",
+        "w": 1200,
+        "h": 900
+      },
+      {
+        "id": "0008",
+        "thumbnail": "static/img/vision/vision8.jpg",
+        "bigImg": "static/img/vision/vision8_gallery.jpg",
         "w": 1200,
         "h": 900
       }

@@ -71,12 +71,13 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
       font-family: 'textFont';
 
       .text-title {
-        text-decoration: underline;
+        font-style: italic;
         font-size: 15px;
         margin-bottom: 25px;
       }
 
       .text-content {
+        font-family: 'Times New Roman';
         font-size: 17px;
       }
     }

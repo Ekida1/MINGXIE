@@ -71,6 +71,7 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
     overflow-y: auto;
 
     .contact-wrapper {
+      font-family: 'Times New Roman';
       text-align: right;
       font-size: 20px;
 

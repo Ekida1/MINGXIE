@@ -17,6 +17,7 @@
       <div class="pop-layer" v-if="gallaryShow">
         <!-- <div class="close-pop" @click="closeExhibition"></div> -->
       </div>
+      <div class="downLoad-btn"></div>
     </div>
     <exhibition v-if="gallaryShow" :slideToIndex="slideToIndex" :photosList="photosList" @closeModal="closeExhibition"></exhibition>
   </div>
@@ -159,6 +160,31 @@ export default {
       transition: 0.3s opacity ease-out;
     }
   }
+
+  .downLoad-btn {
+    position: relative;
+    left: 91%;
+    bottom: 35px;
+    opacity: 0.7;
+    background-image: url('/static/img/download.png');
+    width: 53px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 199;
+  }
+
+  .downLoad-btn:before {
+    content: 'DownLoad All';
+    position: absolute;
+    left: -25px;
+    bottom: 50px;
+    width: 110px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-weight: bold;
+  }
 }
 
 @media screen and (max-width: 1456px) {
@@ -186,6 +212,11 @@ export default {
   .img-item {
     width: 325px !important;
     height: 177px !important;
+  }
+
+  .downLoad-btn {
+    left: 71% !important;
+    bottom: 13px !important;
   }
 }
 </style>

@@ -48,16 +48,16 @@ export default new Router({
     {
       path: '/gallery',
       name: 'gallery',
-      redirect: '/gallery/onstage',
+      redirect: '/gallery/offstage',
       component: gallery,
       children: [{
-        path: '/gallery/onstage',
-        name: 'onstage',
-        component: onstage,
-      }, {
         path: '/gallery/offstage',
         name: 'offstage',
         component: offstage,
+      }, {
+        path: '/gallery/onstage',
+        name: 'onstage',
+        component: onstage,
       }, {
         path: '/gallery/vision',
         name: 'vision',

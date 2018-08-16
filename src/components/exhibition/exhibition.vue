@@ -96,8 +96,9 @@ export default {
   }
 
   .exhibition-img {
-    width: 952px;
-    height: 643px;
+    // width: 952px;
+    // height: 643px;
+    background-size: cover;
   }
 }
 </style>

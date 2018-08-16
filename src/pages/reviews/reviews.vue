@@ -1,25 +1,22 @@
 <template>
-<div class="basement">
-  <ul class="reviews-list">
-    <li class="section-item bt" v-for="(item,index) in reviewsList" :key="item.id" :style="{'flex-direction': (index+1) % 2 === 0 ? 'row-reverse' : 'row' }">
-            <div class="text-info">
-        <p class="text-title">{{item.title}}</p>
-        <p class="text-content">{{item.content}}</p>
-        <div class="readmore">Read More</div>
-      </div>
-      <div class="img-info">
-
-        <div class="img-container">
-
-        <!-- <div class="img-content"></div> -->
-        <img :src="item.imgUrl" alt="">
+  <div class="basement">
+    <ul class="reviews-list">
+      <li class="section-item bt" v-for="item in reviewsList" :key="item.id">
+        <div class="img-info">
+          <div class="img-container">
+            <img :src="item.imgUrl" alt="">
+          </div>
         </div>
-      </div>
-
-    </li>
-  </ul>
-</div>
+        <div class="text-info">
+          <p class="text-title">{{item.title}}</p>
+          <p class="text-content">{{item.content}}</p>
+          <div class="readmore" @click="toDetail">Read More</div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
+
 <script>
 import { getReviewsListData } from "common/request/request";
 export default {
@@ -29,7 +26,13 @@ export default {
       reviewsList: []
     };
   },
-  computed: {},
+  methods: {
+    toDetail() {
+      this.$router.push({
+        path: "/detail"
+      });
+    }
+  },
   activated() {
     getReviewsListData().then(res => {
       if (res.success && res.data) {
@@ -43,6 +46,7 @@ export default {
   }
 };
 </script>
+
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
@@ -62,6 +66,7 @@ export default {
 
     .section-item {
       display: flex;
+      flex-direction: row-reverse;
       width: 90%;
       height: 450px;
       padding: 25px 0;
@@ -80,11 +85,8 @@ export default {
 
           // background: #E5C3B2;
           img {
-            width: 100%;
-            clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
-            -webkit-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
-            -moz-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
-            -ms-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
+            width: 84%;
+            float: right;
           }
         }
       }
@@ -93,16 +95,14 @@ export default {
         width: 45%;
         padding: 20px 20px;
 
-        // background-color: yellowgreen;
         .text-title {
           font-size: 40px;
           color: $Probrown;
-          font-family: 'reviewsTitleFont';
         }
 
         .text-content {
           color: $ProDark;
-          // font-family: 'textFont';
+          font-family: 'Times New Roman';
           font-size: 18px;
           line-height: 32px;
           height: 128px; // 此时设置的4行后省略，由于火狐浏览器无法多行省略，所以设置定高，一来不影响其他浏览器，反正128px后会被省略，二来火狐浏览器溢出直接hidden
@@ -143,6 +143,21 @@ export default {
 
   .text-info {
     width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .section-item {
+    height: 675px !important;
+
+    .img-container {
+      height: 100% !important;
+    }
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
 }
 </style>

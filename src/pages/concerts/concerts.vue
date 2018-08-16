@@ -2,8 +2,12 @@
 <div class="basement">
   <div class="concerts-img"></div>
   <div class="text-box">
-    <ul class="tickets-list">
-      <li class="ticket-item" v-for="ticket in ticketsList" :key="ticket.id">
+    <div class="options-header">
+      <div class="left-option" :class="{'active-option': 'upComing' === headerOptions }" @click="checkedOptions('upComing')">UpComing</div>
+      <div class="right-option" :class="{'active-option': 'PastEvent' === headerOptions }" @click="checkedOptions('PastEvent')">Past Events</div>
+    </div>
+    <ul class="tickets-list" v-show="'upComing' === headerOptions">
+      <li class="ticket-item" v-for="ticket in upComingTicketsList" :key="ticket.id">
         <div class="time-title">{{ticket.timeTitle}}</div>
         <div class="text-title">{{ticket.textTitle}}</div>
         <div class="location-title">{{ticket.location}}</div>
@@ -15,6 +19,19 @@
         </div>
       </li>
     </ul>
+    <ul class="tickets-list" v-show="'PastEvent' === headerOptions">
+  <li class="ticket-item" v-for="ticket in pastTicketsList" :key="ticket.id">
+    <div class="time-title">{{ticket.timeTitle}}</div>
+    <div class="text-title">{{ticket.textTitle}}</div>
+    <div class="location-title">{{ticket.location}}</div>
+    <div class="text-content">{{ticket.textContent}}</div>
+    <div class="tickets-btn-wrapper">
+    <div class="left-triangle"></div>
+    <div class="tickets-btn">Ticket</div>
+    <div class="right-triangle"></div>
+    </div>
+  </li>
+</ul>
   </div>
 </div>
 </template>
@@ -24,14 +41,22 @@ export default {
   name: "concerts",
   data() {
     return {
-      ticketsList: []
+      upComingTicketsList: [],
+      pastTicketsList: [],
+      headerOptions: "upComing"
     };
+  },
+  methods: {
+    checkedOptions(option) {
+      this.headerOptions = option;
+    }
   },
   created() {
     getConcertsInfo().then(res => {
       if (res.success && res.data) {
         const data = res.data;
-        this.ticketsList = data.ticketsList;
+        this.upComingTicketsList = data.upComingTicketsList;
+        this.pastTicketsList = data.pastTicketsList;
       }
       err => {
         reject(err);
@@ -68,10 +93,36 @@ export default {
     color: #ffffff;
     line-height: 26px;
 
+    .options-header {
+      display: flex;
+      width: 553px;
+      height: 40px;
+
+      .left-option {
+        width: 50%;
+        line-height: 40px;
+        text-align: center;
+        background-color: #000000;
+        cursor: pointer;
+      }
+
+      .right-option {
+        width: 50%;
+        line-height: 40px;
+        text-align: center;
+        background-color: #000000;
+        cursor: pointer;
+      }
+
+      .active-option {
+        background-color: transparent;
+      }
+    }
+
     .tickets-list {
       text-align: center;
       width: 553px;
-      height: calc(100vh - 161px);
+      height: calc(100vh - 201px);
       padding: 0px 30px;
       margin-top: 20px;
       overflow: auto;
@@ -97,6 +148,7 @@ export default {
         }
 
         .text-content {
+          font-family: 'Times New Roman';
           padding: 15px 0;
         }
 
@@ -124,6 +176,10 @@ export default {
     width: 450px !important;
     right: 30px !important;
 
+    .options-header {
+      width: 450px !important;
+    }
+
     .tickets-list {
       width: 450px !important;
     }
@@ -148,9 +204,18 @@ export default {
     top: -470px !important;
     background-image: none !important;
 
+    .options-header {
+      width: 380px !important;
+    }
+
     .tickets-list {
       width: 380px !important;
       height: auto !important;
+      margin-top: 0 !important;
+
+      .time-title {
+        padding-top: 0 !important;
+      }
     }
   }
 }
@@ -174,9 +239,18 @@ export default {
     background-image: none !important;
   }
 
+  .options-header {
+    width: 380px !important;
+  }
+
   .tickets-list {
     width: 380px !important;
     height: auto !important;
+    margin-top: 0 !important;
+
+    .time-title {
+      padding-top: 0 !important;
+    }
   }
 }
 </style>

@@ -1,7 +1,7 @@
 {
   "success": true,
   "data": {
-    "ticketsList": [{
+    "upComingTicketsList": [{
         "id": "0001",
         "timeTitle": "August 23, 2018",
         "textTitle": "XXXV Festival International De Piano",
@@ -37,6 +37,47 @@
       {
         "id": "0005",
         "timeTitle": "20 July 2018, 20:20",
+        "textTitle": "Mariinsky Theatre",
+        "location": "Chengdu, China",
+        "textContent": "Masterclasses and Private Lessons"
+      }
+    ],
+    "pastTicketsList": [{
+        "id": "0001",
+        "timeTitle": "August 23, 2017",
+        "textTitle": "XXXV Festival International De Piano",
+        "location": "Bucaramanga Colombia",
+        "textContent": "Rameau Selections from Nouvelles suites de pieces de clavecin, suite en la mineur Debussy Images(Premiere Serie) Granados Goyescas V.El fandango de candil Chopin 24 Preludes OP. 28"
+      },
+      {
+        "id": "0002",
+        "timeTitle": "20 July 2017, 20:20",
+        "textTitle": "Mariinsky Theatre",
+        "location": "Chengdu, China",
+        "textContent": "Masterclasses and Private Lessons"
+      },
+      {
+        "id": "0003",
+        "timeTitle": "August 23, 2017",
+        "textTitle": "XXXV Festival International De Piano",
+        "location": "Bucaramanga Colombia",
+        "textContent": "Rameau Selections from Nouvelles suites de pieces de clavecin, suite en la mineur Debussy Images(Premiere Serie) Granados Goyescas V.El fandango de candil Chopin 24 Preludes OP. 28"
+      },
+      {
+        "id": "0004",
+        "timeTitle": "20 July 2017, 20:20",
+        "textTitle": "Mariinsky Theatre",
+        "location": "Chengdu, China",
+        "textContent": "Masterclasses and Private Lessons"
+      }, {
+        "timeTitle": "August 23, 2018",
+        "textTitle": "XXXV Festival International De Piano",
+        "location": "Bucaramanga Colombia",
+        "textContent": "Rameau Selections from Nouvelles suites de pieces de clavecin, suite en la mineur Debussy Images(Premiere Serie) Granados Goyescas V.El fandango de candil Chopin 24 Preludes OP. 28"
+      },
+      {
+        "id": "0005",
+        "timeTitle": "20 July 2017, 20:20",
         "textTitle": "Mariinsky Theatre",
         "location": "Chengdu, China",
         "textContent": "Masterclasses and Private Lessons"

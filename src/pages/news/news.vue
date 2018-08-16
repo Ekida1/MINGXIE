@@ -1,7 +1,7 @@
 <template>
   <div class="basement">
     <ul class="news-list">
-      <li class="section-item bt" v-for="item in newsList" :key="item.id">
+      <li class="section-item bt" v-for="(item,index) in newsList" :key="item.id" :style="{'flex-direction': (index+1) % 2 === 0 ? 'row' : 'row-reverse' }">
         <div class="img-info">
           <div class="img-container">
             <img :src="item.imgUrl" alt="">
@@ -10,7 +10,7 @@
         <div class="text-info">
           <p class="text-title">{{item.title}}</p>
           <p class="text-content">{{item.content}}</p>
-          <div class="readmore" @click="toDetail">Read More</div>
+          <div class="readmore">Read More</div>
         </div>
       </li>
     </ul>
@@ -26,13 +26,7 @@ export default {
       newsList: []
     };
   },
-  methods: {
-    toDetail() {
-      this.$router.push({
-        path: "/detail"
-      });
-    }
-  },
+  computed: {},
   activated() {
     getNewsListData().then(res => {
       if (res.success && res.data) {
@@ -75,7 +69,6 @@ export default {
 
       .img-info {
         width: 55%;
-        // background-color: orange;
         overflow: hidden;
 
         .img-container {
@@ -83,10 +76,12 @@ export default {
           height: 80%;
           overflow: hidden;
 
-          // background: #E5C3B2;
           img {
-            width: 84%;
-            float: right;
+            width: 100%;
+            clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
+            -webkit-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
+            -moz-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
+            -ms-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
           }
         }
       }
@@ -95,16 +90,15 @@ export default {
         width: 45%;
         padding: 20px 20px;
 
-        // background-color: yellowgreen;
         .text-title {
           font-size: 40px;
           color: $Probrown;
-          // font-family: 'reviewsTitleFont';
+          font-family: 'newsTitleFont';
         }
 
         .text-content {
           color: $ProDark;
-          // font-family: 'textFont';
+          font-family: 'Times New Roman';
           font-size: 18px;
           line-height: 32px;
           height: 128px; // 此时设置的4行后省略，由于火狐浏览器无法多行省略，所以设置定高，一来不影响其他浏览器，反正128px后会被省略，二来火狐浏览器溢出直接hidden
@@ -150,7 +144,12 @@ export default {
 
 @media screen and (max-width: 415px) {
   .section-item {
-    height: 675px !important;
+    height: 740px !important;
+
+    .img-info {
+      position: relative !important;
+      right: 85px !important;
+    }
 
     .img-container {
       height: 100% !important;

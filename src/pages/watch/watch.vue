@@ -127,21 +127,21 @@ export default {
     width: 800px;
     height: 500px;
     margin: 10px 0px;
-    background-color: orange;
+    background: linear-gradient(to top right, #39475D, #EEC39B);
   }
 
   .slide2 {
     width: 800px;
     height: 500px;
     margin: 10px 0px;
-    background-color: pink;
+    background: linear-gradient(to top right, #39475D, #C9B6D6);
   }
 
   .slide3 {
     width: 800px;
     height: 500px;
     margin: 10px 0px;
-    background-color: yellowgreen;
+    background: linear-gradient(to top right, #E3A59B, #39475D);
   }
 }
 </style>
