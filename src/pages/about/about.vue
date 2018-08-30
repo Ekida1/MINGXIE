@@ -1,32 +1,50 @@
 <template>
-<div class="basement">
-  <div class="about-img"></div>
-  <div class="text-box">
-    <div class="text-container">
-    <div class="text-title">
-      "A breathtakingly fine account which not only equalled but eclipsed that superb Kitchen recording of decades ago"
-    </div>
-    <p class="text-content">
-    {{aboutText}}
-    </p>
+  <div class="basement">
+    <div class="about-img"></div>
+    <div class="text-box">
+      <div class="text-container">
+        <div class="text-title">
+          "A breathtakingly fine account which not only equalled but eclipsed that superb Kitchen recording of decades ago."
+        </div>
+        <div class="text-title text-author">-The West Australian</div>
+        <p class="text-content">
+          {{aboutParagraph.paragraph1}}
+        </p>
+        <p class="text-content">
+          {{aboutParagraph.paragraph2}}
+        </p>
+        <p class="text-content">
+          {{aboutParagraph.paragraph3}}
+        </p>
+        <p class="text-content">
+          {{aboutParagraph.paragraph4}}
+        </p>
+        <p class="text-content">
+          {{aboutParagraph.paragraph5}}
+        </p>
+        <p class="text-content">
+          {{aboutParagraph.paragraph6}}
+        </p>
+        <p class="text-date">Updated in August, 2018</p>
+      </div>
     </div>
   </div>
-</div>
 </template>
+
 <script>
 import { getAboutText } from "common/request/request";
 export default {
   name: "about",
   data() {
     return {
-      aboutText: ""
+      aboutParagraph: ""
     };
   },
   created() {
     getAboutText().then(res => {
       if (res.success && res.data) {
         const data = res.data;
-        this.aboutText = data.aboutText;
+        this.aboutParagraph = data.aboutParagraph;
       }
       err => {
         reject(err);
@@ -35,6 +53,7 @@ export default {
   }
 };
 </script>
+
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
@@ -59,7 +78,7 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
     right: 47px;
     width: 640px;
     background-image: linear-gradient(to left, rgba(255 250 250, 0), rgba(255 250 250, 0.22));
-    color: #ffffff;
+    color: #C7C7C7;
     line-height: 26px;
 
     .text-container {
@@ -74,12 +93,24 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
         font-style: italic;
         font-size: 15px;
         margin-bottom: 25px;
+        text-decoration: underline;
+      }
+
+      .text-author {
+        float: right;
       }
 
       .text-content {
         font-family: 'Times New Roman';
         text-indent: 25px;
         font-size: 17px;
+        clear: both;
+      }
+
+      .text-date {
+        font-family: 'Times New Roman';
+        font-size: 17px;
+        float: right;
       }
     }
   }
