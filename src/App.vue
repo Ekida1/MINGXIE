@@ -108,7 +108,10 @@ titleFontFamily();
 }
 
 #app {
+  -webkit-text-size-adjust: none;
+
   .banner {
+    font-family: titleFont;
     position: fixed;
     top: 0;
     width: 100%;
@@ -117,7 +120,6 @@ titleFontFamily();
     text-align: center;
     line-height: 70px;
     font-size: 40px;
-    font-family: 'titleFont';
     color: $Probrown;
     z-index: 1030;
     cursor: default;

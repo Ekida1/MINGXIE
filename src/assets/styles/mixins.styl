@@ -41,18 +41,10 @@ url('/static/img/triangle.png')
 
 titleFontFamily()
   @font-face
-    font-family: 'titleFont';
-    src: url('/font/Rachel Roman.ttf') format('truetype'),/* IE9+,可以是具体的实际链接 */
-
-timeTitleFontFamily()
- @font-face
-    font-family: 'timeTitleFont';
-    src:url('/font/Riccione-XlightIta.ttf') format('truetype')
-allTextFontFamily()
-@font-face
-    font-family: 'textFont';
-    src:url('/font/Times New Roman.ttf') format('truetype')
-reviewsTitleFontFamily()
-@font-face
-    font-family: 'reviewsTitleFont';
-    src:url('/font/Times New Roman Bold Italic.ttf') format('truetype')
+    font-family: titleFont;
+    src: url('/src/assets/font/Rachel Roman.svg') format('svg'),
+         url('/src/assets/font/Rachel Roman.ttf') format('truetype')
+newsTitleFamily()
+  @font-face
+    font-family: newsTitleFont;
+    src: url('/src/assets/font/gur.ttf') format('truetype')

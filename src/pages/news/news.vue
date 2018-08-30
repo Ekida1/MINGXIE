@@ -1,16 +1,17 @@
 <template>
   <div class="basement">
     <ul class="news-list">
-      <li class="section-item bt" v-for="(item,index) in newsList" :key="item.id" :style="{'flex-direction': (index+1) % 2 === 0 ? 'row' : 'row-reverse' }">
+      <li class="section-item bt" v-for="(item,index) in newsList" :key="item.id" :style="{'flex-direction': (index+1) % 2 === 0 ? 'row' : 'row-reverse'}">
         <div class="img-info">
-          <div class="img-container">
+          <div class="img-container" :style="{'left': (index+1) % 2 === 0 ? '100px' : '40px'}">
             <img :src="item.imgUrl" alt="">
           </div>
         </div>
-        <div class="text-info">
+        <div class="text-info" :style="{'text-align': (index+1) % 2 === 0 ? 'left' : 'right'}">
           <p class="text-title">{{item.title}}</p>
+          <p class="text-time">{{item.time}}</p>
           <p class="text-content">{{item.content}}</p>
-          <div class="readmore">Read More</div>
+          <div class="readmore" :style="{'float': (index+1) % 2 === 0 ? 'left' : 'right'}"><a :href="item.link">Read More</a></div>
         </div>
       </li>
     </ul>
@@ -45,6 +46,8 @@ export default {
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
 
+newsTitleFamily();
+
 .basement {
   width: 100%;
   margin-top: 126px;
@@ -62,26 +65,27 @@ export default {
       display: flex;
       flex-direction: row-reverse;
       width: 90%;
-      height: 450px;
+      height: 460px;
       padding: 25px 0;
       margin: auto 5%;
       overflow: hidden;
 
       .img-info {
-        width: 55%;
+        width: 53%;
         overflow: hidden;
 
         .img-container {
-          width: 100%;
-          height: 80%;
+          width: 94%;
           overflow: hidden;
+          position: relative;
+          bottom: 28px;
 
           img {
-            width: 100%;
-            clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
-            -webkit-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
-            -moz-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
-            -ms-clip-path: polygon(25% 10%, 100% 10%, 75% 90%, 0% 90%);
+            width: 95%;
+            clip-path: polygon(15% 10%, 90% 10%, 75% 90%, 0% 90%);
+            -webkit-clip-path: polygon(15% 10%, 90% 10%, 75% 90%, 0% 90%);
+            -moz-clip-path: polygon(15% 10%, 90% 10%, 75% 90%, 0% 90%);
+            -ms-clip-path: polygon(15% 10%, 90% 10%, 75% 90%, 0% 90%);
           }
         }
       }
@@ -91,15 +95,20 @@ export default {
         padding: 20px 20px;
 
         .text-title {
-          font-size: 40px;
+          font-size: 30px;
           color: $Probrown;
-          font-family: 'newsTitleFont';
+          font-family: newsTitleFont;
+        }
+
+        .text-time {
+          font-size: 16px;
+          color: $ProDark;
         }
 
         .text-content {
           color: $ProDark;
           font-family: 'Times New Roman';
-          font-size: 18px;
+          font-size: 16px;
           line-height: 32px;
           height: 128px; // 此时设置的4行后省略，由于火狐浏览器无法多行省略，所以设置定高，一来不影响其他浏览器，反正128px后会被省略，二来火狐浏览器溢出直接hidden
           multEllipsis();
@@ -107,15 +116,17 @@ export default {
 
         .readmore {
           background-color: $Probrown;
-          color: $ProDark;
           width: 120px;
           height: 35px;
           line-height: 35px;
           text-align: center;
           border-radius: 1px;
           font-weight: bold;
-          margin-top: 30px;
           cursor: pointer;
+
+          a {
+            color: $ProDark !important;
+          }
         }
       }
     }

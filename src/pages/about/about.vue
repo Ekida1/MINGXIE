@@ -6,9 +6,9 @@
     <div class="text-title">
       "A breathtakingly fine account which not only equalled but eclipsed that superb Kitchen recording of decades ago"
     </div>
-    <div class="text-content">
+    <p class="text-content">
     {{aboutText}}
-    </div>
+    </p>
     </div>
   </div>
 </div>
@@ -39,7 +39,6 @@ export default {
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
 
-allTextFontFamily();
 scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
 
 .basement {
@@ -71,6 +70,7 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
       font-family: 'textFont';
 
       .text-title {
+        text-indent: 25px;
         font-style: italic;
         font-size: 15px;
         margin-bottom: 25px;
@@ -78,6 +78,7 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
 
       .text-content {
         font-family: 'Times New Roman';
+        text-indent: 25px;
         font-size: 17px;
       }
     }

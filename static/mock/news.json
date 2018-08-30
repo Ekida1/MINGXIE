@@ -2,17 +2,59 @@
   "success": true,
   "data": {
     "newsList": [{
-      "imgUrl": "/static/img/news.jpg",
-      "title": "Xie,virtuoso que se 'apodera' de la imaginacion",
-      "content": "En la inex orable busqueda de la excelencia que inicio hace una decada el Teatro Colsubisdio 'Roberto Arias Perez',nuevaments se sube el telo para que el viruosismo de Ming Xie sea el que abra la temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este instrumento temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este yty"
+      "imgUrl": "/static/img/news_pic1.jpg",
+      "title": "Ming returns to Colombia for recitals and masterclass",
+      "time": "July 2018",
+      "content": "“Con la presentación de artistas y grupos musicales reconocidos a nivel mundial, la Universidad Industrial de antander abre sus puertas al XXXV Festival Internacional de Piano (FIP) 2018, evento donde la comunidad universitaria y ciudadanía en general podrán disfrutar de lo mejor de la música clásica.”",
+      "link": "http://www.fipuis.com"
     }, {
-      "imgUrl": "/static/img/news.jpg",
-      "title": "Xie,virtuoso que se 'apodera' de la imaginacion",
-      "content": "En la inex orable busqueda de la excelencia que inicio hace una decada el Teatro Colsubisdio 'Roberto Arias Perez',nuevaments se sube el telo para que el viruosismo de Ming Xie sea el que abra la temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este instrumento temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este yty"
+      "imgUrl": "/static/img/news_pic2.jpg",
+      "title": "Ming made London debut at Wigmore Hall",
+      "time": "June 2018",
+      "content": "“It was from the very first note the most phenomenal natural talent that spread itself across the piano like liquid gold.”",
+      "link": "https://christopheraxworthymusiccommentary.wordpress.com/2018/07/02/miracles-at-the-guildhall/"
     }, {
-      "imgUrl": "/static/img/news.jpg",
-      "title": "Xie,virtuoso que se 'apodera' de la imaginacion",
-      "content": "En la inex orable busqueda de la excelencia que inicio hace una decada el Teatro Colsubisdio 'Roberto Arias Perez',nuevaments se sube el telo para que el viruosismo de Ming Xie sea el que abra la temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este instrumento temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este yty"
+      "imgUrl": "/static/img/news_pic3.jpg",
+      "title": "Mozart 488 on medici – Xie / Jiao / Harbin Chamber Orchestra",
+      "time": "January 2018",
+      "content": "",
+      "link": "https://harbincomp18.medicitv.cn/replay/semi-final-with-xie-ming/?utm_source=facebook&utm_medium=cpc&utm_campaign=20170122_ming%20xie"
+    }, {
+      "imgUrl": "/static/img/news_pic4.jpg",
+      "title": "2018 Gawon Music Award Winner",
+      "time": "January 2018",
+      "content": "The Gawon International Music Society was established in March of 1994 with the goal of globally advocating the interchange of music across cultural boundaries. Through the sponsorship of international music festivals, the Gawon International Music Society has actively promoted Korean culture,as well as playing a decisive role in the enhancement of global music and culture.",
+      "link": "http://www.gawonaward.com/winner.html"
+    }, {
+      "imgUrl": "/static/img/news_pic5.jpg",
+      "title": "Ming returns to Mariinsky for concerts in XII Mariinsky International Piano Festival",
+      "time": "December 2017",
+      "content": "",
+      "link": "https://www.mariinsky.ru/en/news1/2017/12/15_1"
+    }, {
+      "imgUrl": "/static/img/news_pic6.jpg",
+      "title": "Musicians’ Company Award: GSMD Silver Medal 2017 Winner",
+      "time": "November 2017",
+      "content": "",
+      "link": "https://www.wcom.org.uk/who-are-we/"
+    }, {
+      "imgUrl": "/static/img/news_pic7.jpg",
+      "title": "Ming made debut with Gergiev and Mariinsky Orchestra in Mariinsky for concerts in XII Mariinsky International Piano Festival",
+      "time": "August 2017",
+      "content": "“On 4 and 5 August talented musicians from Russia, Asia, Europe and North America together with the Symphony Orchestra of the Mariinsky Theatre under the baton of Valery Gergiev will present all concertos for piano and orchestra by the great Russian composer in two evenings of the Rachmaninoff Cycle as part of the II International Mariinsky Far East Festival.”",
+      "link": "https://prim.mariinsky.ru/en/news1/2017/08/8_1"
+    }, {
+      "imgUrl": "/static/img/news_pic8.jpg",
+      "title": "Ming made Belgium debut at 10th Brussels Piano Festival",
+      "time": "October 2017",
+      "content": "",
+      "link": "http://www.brusselspianofestival.com/ming-xie-bio/"
+    }, {
+      "imgUrl": "/static/img/news_pic9.jpg",
+      "title": "Ming opened the 10ª Serie Internacional de Grandes Pianistas in Colombia",
+      "time": "January 2017",
+      "content": "“Considerado por la crítica especializada como un verdadero virtuoso, el pianista chino Xie Ming será el encargado de abrir el próximo 28 de enero la Serie Internacional de Grandes Pianistas del Teatro Colsubsidio de Bogotá.”",
+      "link": "http://espanol.cri.cn/2786/2017/01/28/1s402261.htm"
     }]
   }
 }

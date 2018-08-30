@@ -1,53 +1,40 @@
 {
   "success": true,
   "data": {
+    "zip": "static/img/offstage/offstage.zip",
     "photosList": [{
         "id": "0000",
-        "thumbnail": "static/img/offstage/offstagebanner.jpg",
-        "bigImg": "static/img/offstage/offstageGalleryBanner.jpg",
-        "w": 1200,
-        "h": 900
+        "thumb": "static/img/offstage/offstagebanner.jpg",
+        "src": "static/img/offstage/offstageGalleryBanner.jpg"
       },
       {
         "id": "0001",
-        "thumbnail": "static/img/offstage/offstage1.jpg",
-        "bigImg": "static/img/offstage/offstage1.jpg",
-        "w": 1200,
-        "h": 900
+        "thumb": "static/img/offstage/offstage1.jpg",
+        "src": "static/img/offstage/offstage1.jpg"
       },
       {
         "id": "0002",
-        "thumbnail": "static/img/offstage/offstage2.jpg",
-        "bigImg": "static/img/offstage/offstage2.jpg",
-        "w": 1200,
-        "h": 900
+        "thumb": "static/img/offstage/offstage2.jpg",
+        "src": "static/img/offstage/offstage2.jpg"
       },
       {
         "id": "0003",
-        "thumbnail": "static/img/offstage/offstage3.jpg",
-        "bigImg": "static/img/offstage/offstage3.jpg",
-        "w": 1200,
-        "h": 900
+        "thumb": "static/img/offstage/offstage3.jpg",
+        "src": "static/img/offstage/offstage3.jpg"
       },
       {
         "id": "0004",
-        "thumbnail": "static/img/offstage/offstage4.jpg",
-        "bigImg": "static/img/offstage/offstage4.jpg",
-        "w": 1200,
-        "h": 900
+        "thumb": "static/img/offstage/offstage4.jpg",
+        "src": "static/img/offstage/offstage4.jpg"
       }, {
         "id": "0005",
-        "thumbnail": "static/img/offstage/offstage5.jpg",
-        "bigImg": "static/img/offstage/offstage5.jpg",
-        "w": 1200,
-        "h": 900
+        "thumb": "static/img/offstage/offstage5.jpg",
+        "src": "static/img/offstage/offstage5.jpg"
       },
       {
         "id": "0006",
-        "thumbnail": "static/img/offstage/offstage6.jpg",
-        "bigImg": "static/img/offstage/offstage6.jpg",
-        "w": 1200,
-        "h": 900
+        "thumb": "static/img/offstage/offstage6.jpg",
+        "src": "static/img/offstage/offstage6.jpg"
       }
     ]
   }

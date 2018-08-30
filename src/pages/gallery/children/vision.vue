@@ -1,41 +1,39 @@
 <template>
   <div>
     <div class="photo-list">
-      <div v-for="(photo,index) in photosList" :key="photo.id"  @click="exhibitionShow(index)" class="img-container" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
+      <div v-for="(photo,index) in photosList" :key="photo.id" @click="openGallery(index)" class="img-container" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
         <div class="overlay">
         </div>
-         <img class="img-item" :src="photo.thumbnail" alt="">
+        <img class="img-item" :src="photo.thumb" alt="">
       </div>
     </div>
-          <div class="pop-layer" v-if="gallaryShow">
-      </div>
-            <div class="downLoad-btn"></div>
-      <exhibition v-if="gallaryShow" :slideToIndex="slideToIndex" :photosList="photosList" @closeModal="closeExhibition"></exhibition>
+      <a :href="zip">
+        <div class="downLoad-btn"></div>
+      </a>
+    <LightBox ref="lightbox" :images="photosList" :startAt="slideToIndex" :show-light-box="false"></LightBox>
   </div>
 </template>
 
 <script>
-import exhibition from "components/exhibition/exhibition";
+require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
+import LightBox from "vue-image-lightbox";
 import { getVisonPhotosListData } from "common/request/request";
 export default {
   name: "vision",
   data() {
     return {
       photosList: [{}],
+      zip: "",
       gallaryShow: false,
       slideToIndex: 0
     };
   },
   components: {
-    exhibition
+    LightBox
   },
   methods: {
-    exhibitionShow(index) {
-      this.gallaryShow = true;
-      this.slideToIndex = index;
-    },
-    closeExhibition() {
-      this.gallaryShow = false;
+    openGallery(index) {
+      this.$refs.lightbox.showImage(index);
     }
   },
   created() {
@@ -43,6 +41,7 @@ export default {
       if (res.success && res.data) {
         const data = res.data;
         this.photosList = data.photosList;
+        this.zip = data.zip;
       }
       err => {
         reject(err);

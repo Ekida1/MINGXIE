@@ -8,26 +8,35 @@
     </div>
     <ul class="tickets-list" v-show="'upComing' === headerOptions">
       <li class="ticket-item" v-for="ticket in upComingTicketsList" :key="ticket.id">
-        <div class="time-title">{{ticket.timeTitle}}</div>
-        <div class="text-title">{{ticket.textTitle}}</div>
-        <div class="location-title">{{ticket.location}}</div>
-        <div class="text-content">{{ticket.textContent}}</div>
+        <div class="time-title">{{ticket.timeTitle || ""}}</div>
+        <div class="text-title">{{ticket.textTitle || ""}}</div>
+        <div class="location-title">{{ticket.location || ""}}</div>
+        <div class="text-content">
+          <p>{{ticket.textContent1 || ""}}</p>
+          <p>{{ticket.textContent2 || ""}}</p>
+          <p>{{ticket.textContent3 || ""}}</p>
+          <p>{{ticket.textContent4 || ""}}</p>
+        </div>
+
         <div class="tickets-btn-wrapper">
-        <div class="left-triangle"></div>
-        <div class="tickets-btn">Ticket</div>
-        <div class="right-triangle"></div>
+         <a class="tickets-btn" :href='ticket.link'>Ticket</a>
         </div>
       </li>
     </ul>
     <ul class="tickets-list" v-show="'PastEvent' === headerOptions">
   <li class="ticket-item" v-for="ticket in pastTicketsList" :key="ticket.id">
-    <div class="time-title">{{ticket.timeTitle}}</div>
-    <div class="text-title">{{ticket.textTitle}}</div>
-    <div class="location-title">{{ticket.location}}</div>
-    <div class="text-content">{{ticket.textContent}}</div>
+        <div class="time-title">{{ticket.timeTitle || ""}}</div>
+        <div class="text-title">{{ticket.textTitle || ""}}</div>
+        <div class="location-title">{{ticket.location || ""}}</div>
+        <div class="text-content">
+          <p>{{ticket.textContent1 || ""}}</p>
+          <p>{{ticket.textContent2 || ""}}</p>
+          <p>{{ticket.textContent3 || ""}}</p>
+          <p>{{ticket.textContent4 || ""}}</p>
+        </div>
     <div class="tickets-btn-wrapper">
     <div class="left-triangle"></div>
-    <div class="tickets-btn">Ticket</div>
+    <a class="tickets-btn" :href='ticket.link'>Ticket</a>
     <div class="right-triangle"></div>
     </div>
   </li>
@@ -70,7 +79,6 @@ export default {
 @import '~styles/mixins.styl';
 
 // scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
-// timeTitleFontFamily();
 .basement {
   margin-top: 126px;
   background-color: #121419;
@@ -148,6 +156,7 @@ export default {
         }
 
         .text-content {
+          line-height: 18px;
           font-family: 'Times New Roman';
           padding: 15px 0;
         }
@@ -156,6 +165,8 @@ export default {
           display: flex;
 
           .tickets-btn {
+            text-decoration: none;
+            color: #ffffff;
             background-color: $Probrown;
             font-size: 15px;
             width: 20%;

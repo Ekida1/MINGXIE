@@ -2,62 +2,54 @@
   <div>
     <div class="photo-wrap">
       <div class="img-banner">
-        <div class="banner-img-wrapper" @click="exhibitionShow(0)">
+        <div class="banner-img-wrapper" @click="openGallery(0)">
           <div class="overlay"></div>
-          <img class="img-big" :src="photosList[0].thumbnail" alt="">
+          <img class="img-big" :src="photosList[0].thumb" alt="">
         </div>
       </div>
       <div class="photo-list">
-        <div v-for="(photo,index) in photosList" :key="photo.id" v-if="index>0" class="img-container" @click="exhibitionShow(index)" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
+        <div v-for="(photo,index) in photosList" :key="photo.id" v-if="index>0" class="img-container" @click="openGallery(index)" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
           <div class="overlay-item">
           </div>
-          <img class="img-item" style="width: 483px;height: 294px" :src="photo.thumbnail" alt="">
+          <img class="img-item" :src="photo.thumb" alt="">
         </div>
       </div>
-      <div class="pop-layer" v-if="gallaryShow">
-        <!-- <div class="close-pop" @click="closeExhibition"></div> -->
-      </div>
-      <div class="downLoad-btn"></div>
+      <a :href="zip">
+        <div class="downLoad-btn"></div>
+      </a>
     </div>
-    <exhibition v-if="gallaryShow" :slideToIndex="slideToIndex" :photosList="photosList" @closeModal="closeExhibition"></exhibition>
+    <LightBox ref="lightbox" :images="photosList" :startAt="slideToIndex" :show-light-box="false"></LightBox>
   </div>
 </template>
 
 <script>
-import exhibition from "components/exhibition/exhibition";
+require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
+import LightBox from "vue-image-lightbox";
 import { getonStagePhotosListData } from "common/request/request";
 export default {
   name: "onstage",
   data() {
     return {
-      photosList: [
-        {
-          // id: "0000",
-          // thumbnail: "static/img/onstagebanner.jpg"
-        }
-      ],
+      photosList: [{}],
+      zip: "",
       gallaryShow: false,
       slideToIndex: 0
     };
   },
   components: {
-    exhibition
+    LightBox
   },
   methods: {
-    exhibitionShow(index) {
-      this.gallaryShow = true;
-      this.slideToIndex = index;
-    },
-    closeExhibition() {
-      this.gallaryShow = false;
+    openGallery(index) {
+      this.$refs.lightbox.showImage(index);
     }
   },
-
   created() {
     getonStagePhotosListData().then(res => {
       if (res.success && res.data) {
         const data = res.data;
         this.photosList = data.photosList;
+        this.zip = data.zip;
       }
       err => {
         reject(err);
