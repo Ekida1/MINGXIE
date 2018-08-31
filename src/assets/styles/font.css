@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'titleFont';
+  src: url('/src/assets/font/RachelRoman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* @font-face
+    font-family: newsTitleFont;
+    src: url('/src/assets/font/gur.ttf') format('truetype') */

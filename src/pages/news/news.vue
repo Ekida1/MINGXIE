@@ -1,10 +1,10 @@
 <template>
   <div class="basement">
-    <ul class="news-list">
+    <ul class="news-list animation-fade-up">
       <li class="section-item bt" v-for="(item,index) in newsList" :key="item.id" :style="{'flex-direction': (index+1) % 2 === 0 ? 'row' : 'row-reverse'}">
         <div class="img-info">
           <div class="img-container" :style="{'left': (index+1) % 2 === 0 ? '100px' : '40px'}">
-            <img :src="item.imgUrl" alt="">
+            <a :href="item.link"><img :src="item.imgUrl" alt=""></a>
           </div>
         </div>
         <div class="text-info" :style="{'text-align': (index+1) % 2 === 0 ? 'left' : 'right'}">
@@ -130,6 +130,26 @@ newsTitleFamily();
         }
       }
     }
+  }
+
+  .animation-fade-up {
+    animation: fadeInUp 1000ms;
+    -webkit-animation: fadeInUp 1000ms;
+    -moz-animation: fadeInUp 1000ms;
+    -ms-animation: fadeInUp 1000ms;
+  }
+}
+
+/* 淡入-从下up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

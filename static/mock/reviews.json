@@ -2,17 +2,17 @@
   "success": true,
   "data": {
     "reviewsList": [{
-      "imgUrl": "/static/img/reviews.jpg",
-      "title": "Xie,virtuoso que se 'apodera' de la imaginacion",
-      "content": "En la inex orable busqueda de la excelencia que inicio hace una decada el Teatro Colsubisdio 'Roberto Arias Perez',nuevaments se sube el telo para que el viruosismo de Ming Xie sea el que abra la temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este instrumento temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este yty"
+      "imgUrl": "/static/img/reviews_pic1.jpg",
+      "title": "Xie, virtuoso que se “apodera” de la imaginación",
+      "content": "En la inexorable búsqueda de la excelencia que inició hace una década el Teatro Colsubisdio “Roberto Arias Pérez”, nuevamente se sube el telón para que el virtuosismo de Ming Xie sea el que abra la temporada de “Grandes pianistas” con un repertorio de grandes obras maestras escritas para este instrumento."
     }, {
       "imgUrl": "/static/img/reviews.jpg",
       "title": "Xie,virtuoso que se 'apodera' de la imaginacion",
       "content": "En la inex orable busqueda de la excelencia que inicio hace una decada el Teatro Colsubisdio 'Roberto Arias Perez',nuevaments se sube el telo para que el viruosismo de Ming Xie sea el que abra la temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este instrumento temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este yty"
     }, {
-      "imgUrl": "/static/img/reviews.jpg",
-      "title": "Xie,virtuoso que se 'apodera' de la imaginacion",
-      "content": "En la inex orable busqueda de la excelencia que inicio hace una decada el Teatro Colsubisdio 'Roberto Arias Perez',nuevaments se sube el telo para que el viruosismo de Ming Xie sea el que abra la temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este instrumento temporada de 'Grandes pianistas' con un repertorio de grandes obras maestras escritas para este yty"
+      "imgUrl": "/static/img/reviews_pic3.jpg",
+      "title": "Ming Xie",
+      "content": "Melbourne is, as we are so often reminded, the sporting capital of the world. And as such this often has an unintended impact beyond those who are interested in actual sports – be it traffic congestion, saturation-level news coverage, (oh that the arts had such coverage!), inevitable water cooler and barbecue conversations etc. On this occasion"
     }]
   }
 }

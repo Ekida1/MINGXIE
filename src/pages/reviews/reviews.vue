@@ -1,9 +1,9 @@
 <template>
   <div class="basement">
-    <ul class="reviews-list">
+    <ul class="reviews-list animation-fade-up">
       <li class="section-item bt" v-for="item in reviewsList" :key="item.id">
         <div class="img-info">
-          <div class="img-container">
+          <div class="img-container" @click="toDetail">
             <img :src="item.imgUrl" alt="">
           </div>
         </div>
@@ -82,6 +82,7 @@ export default {
           width: 100%;
           height: 80%;
           overflow: hidden;
+          cursor: pointer;
 
           // background: #E5C3B2;
           img {
@@ -123,6 +124,26 @@ export default {
         }
       }
     }
+  }
+
+  .animation-fade-up {
+    animation: fadeInUp 1000ms;
+    -webkit-animation: fadeInUp 1000ms;
+    -moz-animation: fadeInUp 1000ms;
+    -ms-animation: fadeInUp 1000ms;
+  }
+}
+
+/* 淡入-从下up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

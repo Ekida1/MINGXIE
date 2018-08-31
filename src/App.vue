@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="banner">MING &nbsp; XIE</div>
+    <div class="banner">MING&nbsp; XIE</div>
     <b-navbar toggleable="md" type="dark" fixed="top" variant="white">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <!-- <b-navbar-brand class="logo" @click="checkedItem('home')"><router-link to="/home">MINGXIE</router-link></b-navbar-brand> -->
@@ -96,6 +96,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
+@import '~styles/font.css';
 
 titleFontFamily();
 
@@ -109,9 +110,10 @@ titleFontFamily();
 
 #app {
   -webkit-text-size-adjust: none;
+  overflow: hidden;
 
   .banner {
-    font-family: titleFont;
+    font-family: 'titleFont';
     position: fixed;
     top: 0;
     width: 100%;

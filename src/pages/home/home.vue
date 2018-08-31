@@ -1,5 +1,5 @@
 <template>
-  <div class="basement">
+  <div class="basement animation-fade-up">
     <div class="home-img"></div>
     <a href="https://www.instagram.com/elephancy_/" target="_blank"><div class="instagram"></div></a>
     <a href="https://m.youtube.com/user/KennyTse1" target="_blank"><div class="youtube"></div></a>
@@ -76,6 +76,26 @@ export default {
     background-image: url('/static/img/soundcloud.png');
     background-repeat: no-repeat;
     background-size: 100%;
+  }
+}
+
+.animation-fade-up {
+  animation: fadeInUp 1000ms;
+  -webkit-animation: fadeInUp 1000ms;
+  -moz-animation: fadeInUp 1000ms;
+  -ms-animation: fadeInUp 1000ms;
+}
+
+/* 淡入-从下up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

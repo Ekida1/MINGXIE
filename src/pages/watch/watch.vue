@@ -19,6 +19,8 @@
       </swiper-slide>
       <!-- Optional controls -->
       <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
   </div>
 </template>
@@ -37,6 +39,10 @@ export default {
   data() {
     return {
       swiperOption: {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -118,6 +124,20 @@ export default {
 <style lang="stylus" scoped>
 .basement >>> .swiper-container {
   min-height: 550px;
+}
+
+.basement >>> .swiper-button-prev {
+  background-image: url('/static/img/prev.png');
+  background-size: cover;
+  width: 65px;
+  height: 124px;
+}
+
+.basement >>> .swiper-button-next {
+  background-image: url('/static/img/next.png');
+  background-size: cover;
+  width: 65px;
+  height: 124px;
 }
 
 .basement {

@@ -34,17 +34,16 @@ scrollBarStyle()
     border-radius: 10px;
     background-color: #ffffff;
   }
-getTriangleImg() {
-  background-image: url('/static/img/triangle.png');
-}
-url('/static/img/triangle.png')
+
 
 titleFontFamily()
   @font-face
     font-family: titleFont;
-    src: url('/src/assets/font/Rachel Roman.svg') format('svg'),
-         url('/src/assets/font/Rachel Roman.ttf') format('truetype')
+    src: url-loader('/src/assets/font/RachelRoman.svg') format('svg'),
+         url-loader('/src/assets/font/RachelRoman.ttf') format('truetype')
+    font-weight: normal;
+    font-style: normal;
 newsTitleFamily()
   @font-face
     font-family: newsTitleFont;
-    src: url('/src/assets/font/gur.ttf') format('truetype')
+    src: url-loader('/src/assets/font/gur.ttf') format('truetype')

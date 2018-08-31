@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="photo-list">
+    <div class="photo-list animation-fade-up">
       <div v-for="(photo,index) in photosList" :key="photo.id" @click="openGallery(index)" class="img-container" :class="{'is-left': (index+1) % 2 === 0, 'is-right': (index+1) %2 !== 0 }">
         <div class="overlay">
         </div>
@@ -133,6 +133,26 @@ export default {
   margin-bottom: 10px;
   color: #000000;
   font-weight: bold;
+}
+
+.animation-fade-up {
+  animation: fadeInUp 1000ms;
+  -webkit-animation: fadeInUp 1000ms;
+  -moz-animation: fadeInUp 1000ms;
+  -ms-animation: fadeInUp 1000ms;
+}
+
+/* 淡入-从下up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 1456px) {

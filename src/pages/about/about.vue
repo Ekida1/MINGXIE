@@ -2,7 +2,7 @@
   <div class="basement">
     <div class="about-img"></div>
     <div class="text-box">
-      <div class="text-container">
+      <div class="text-container animation-fade-up">
         <div class="text-title">
           "A breathtakingly fine account which not only equalled but eclipsed that superb Kitchen recording of decades ago."
         </div>
@@ -61,6 +61,7 @@ export default {
 scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
 
 .basement {
+  overflow: hidden;
   margin-top: 126px;
   background-color: #020202;
 
@@ -113,6 +114,26 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
         float: right;
       }
     }
+
+    .animation-fade-up {
+      animation: fadeInUp 1000ms;
+      -webkit-animation: fadeInUp 1000ms;
+      -moz-animation: fadeInUp 1000ms;
+      -ms-animation: fadeInUp 1000ms;
+    }
+  }
+}
+
+/* 淡入-从下up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

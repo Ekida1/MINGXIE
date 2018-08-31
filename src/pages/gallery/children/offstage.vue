@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="photo-wrap">
+    <div class="photo-wrap animation-fade-up">
       <div class="img-banner">
         <div class="banner-img-wrapper" @click="openGallery(0)">
           <div class="overlay"></div>
@@ -178,6 +178,26 @@ export default {
     margin-bottom: 10px;
     color: #000000;
     font-weight: bold;
+  }
+}
+
+.animation-fade-up {
+  animation: fadeInUp 1000ms;
+  -webkit-animation: fadeInUp 1000ms;
+  -moz-animation: fadeInUp 1000ms;
+  -ms-animation: fadeInUp 1000ms;
+}
+
+/* 淡入-从下up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

@@ -7,7 +7,7 @@
       <div class="right-option" :class="{'active-option': 'PastEvent' === headerOptions }" @click="checkedOptions('PastEvent')">Past Events</div>
     </div>
     <ul class="tickets-list" v-show="'upComing' === headerOptions">
-      <li class="ticket-item" v-for="ticket in upComingTicketsList" :key="ticket.id">
+      <li class="ticket-item animation-fade-up" v-for="ticket in upComingTicketsList" :key="ticket.id">
         <div class="time-title">{{ticket.timeTitle || ""}}</div>
         <div class="text-title">{{ticket.textTitle || ""}}</div>
         <div class="location-title">{{ticket.location || ""}}</div>
@@ -24,7 +24,7 @@
       </li>
     </ul>
     <ul class="tickets-list" v-show="'PastEvent' === headerOptions">
-  <li class="ticket-item" v-for="ticket in pastTicketsList" :key="ticket.id">
+  <li class="ticket-item animation-fade-up" v-for="ticket in pastTicketsList" :key="ticket.id">
         <div class="time-title">{{ticket.timeTitle || ""}}</div>
         <div class="text-title">{{ticket.textTitle || ""}}</div>
         <div class="location-title">{{ticket.location || ""}}</div>
@@ -178,7 +178,27 @@ export default {
           }
         }
       }
+
+      .animation-fade-up {
+        animation: fadeInUp 1000ms;
+        -webkit-animation: fadeInUp 1000ms;
+        -moz-animation: fadeInUp 1000ms;
+        -ms-animation: fadeInUp 1000ms;
+      }
     }
+  }
+}
+
+/* 淡入-从下up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
