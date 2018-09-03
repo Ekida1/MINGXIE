@@ -3,14 +3,14 @@
     <ul class="reviews-list animation-fade-up">
       <li class="section-item bt" v-for="item in reviewsList" :key="item.id">
         <div class="img-info">
-          <div class="img-container" @click="toDetail">
-            <img :src="item.imgUrl" alt="">
+          <div class="img-container" @click="toDetail(item.id)">
+            <img :src="item.imgUrl" alt="Read More">
           </div>
         </div>
         <div class="text-info">
           <p class="text-title">{{item.title}}</p>
           <p class="text-content">{{item.content}}</p>
-          <div class="readmore" @click="toDetail">Read More</div>
+          <div class="readmore" @click="toDetail(item.id)">Read More</div>
         </div>
       </li>
     </ul>
@@ -27,9 +27,13 @@ export default {
     };
   },
   methods: {
-    toDetail() {
+    toDetail(id) {
       this.$router.push({
-        path: "/detail"
+        path: "/detail",
+        name: "detail",
+        params: {
+          id: id
+        }
       });
     }
   },

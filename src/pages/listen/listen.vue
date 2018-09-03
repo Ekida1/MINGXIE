@@ -2,7 +2,7 @@
 <div class="basement">
   <div class="listen-img"></div>
   <div id="player"></div>
-  <music-box class="muisc-box" :musicList="musicList" @checkedMusic="playMusic" @SwitchMusic="playMusic"></music-box>
+  <music-box class="muisc-box animation-fade-up" :musicList="musicList" @checkedMusic="playMusic" @SwitchMusic="playMusic"></music-box>
 </div>
 </template>
 <script>
@@ -57,10 +57,12 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .basement {
+  overflow: hidden;
   margin-top: 126px;
   background-color: #121419;
 
   .listen-img {
+    overflow: hidden;
     width: 100%;
     height: calc(100vh - 126px);
     background-image: url('/static/img/listen.png');
@@ -74,6 +76,26 @@ export default {
     top: 160px;
     right: 100px;
     width: 400px;
+  }
+
+  .animation-fade-up {
+    animation: fadeInUp 1000ms;
+    -webkit-animation: fadeInUp 1000ms;
+    -moz-animation: fadeInUp 1000ms;
+    -ms-animation: fadeInUp 1000ms;
+  }
+}
+
+/* 淡入-从下up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

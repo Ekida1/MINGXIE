@@ -70,10 +70,10 @@ function getNewsListData() {
   });
 }
 
-function getDetailData() {
+function getDetailData(id) {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/detail.json",
+      url: "./api/detail" + id + ".json",
       methods: "GET"
     }).then(
       res => {

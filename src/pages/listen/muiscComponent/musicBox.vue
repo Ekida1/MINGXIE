@@ -21,18 +21,19 @@
         <div class="nextsong" @click="shiftMusic('next')"></div>
       </div>
       <div class="volume-controller">
-        <div class="icon-volume"></div>
+        <div v-show="isVoice" class="icon-volume" @click="toggleVoice"></div>
+        <div v-show="!isVoice" class="icon-silence-volume" @click="toggleVoice"></div>
         <div class="volume-wrapper">
-          <progress-bar :progressbar="volume"
-          :changeProgressHandler="changeVolumeHandler"
-           ></progress-bar>
+          <vol-progress-bar :valProgressbar="volume"
+          :changeProgressHandler="changeVolumeHandler" @volumeIsTrue="volumeIsTrue"
+           ></vol-progress-bar>
         </div>
       </div>
     </div>
     <div class="music-box-body">
       <div class="music-wrap" ref="listenListWrapper">
       <ul class="music-list">
-        <li class="music-item" :class="{'active-item':musicList.indexOf(music) === activeMusicItem }" v-for="music in musicList" :key="music.id" @click="checkedMusicItem(music)">{{music.title}}</li>
+        <li class="music-item" :class="{'active-item':localMusicList.indexOf(music) === activeMusicItem }" v-for="music in localMusicList" :key="music.id" @click="checkedMusicItem(music)">{{music.title}}</li>
       </ul>
       </div>
     </div>
@@ -41,6 +42,7 @@
 
 <script>
 import ProgressBar from "./progress/progress";
+import volProgressBar from "./progress/volProgress";
 import BScroll from "better-scroll";
 export default {
   name: "musicBox",
@@ -52,7 +54,8 @@ export default {
     }
   },
   components: {
-    ProgressBar
+    ProgressBar,
+    volProgressBar
   },
   data() {
     return {
@@ -64,7 +67,10 @@ export default {
       duration: null,
       runTime: null,
       totalTime: null,
-      volume: 0
+      volume: 0,
+      beforeSilenceVol: 0,
+      isVoice: true,
+      localMusicList: []
     };
   },
   methods: {
@@ -77,7 +83,6 @@ export default {
       }
     },
     changeProgressHandler(progress) {
-      // console.log('from root widget', progress);
       $("#player").jPlayer("play", this.duration * progress);
     },
     changeVolumeHandler(progress) {
@@ -100,48 +105,70 @@ export default {
       return `${min}:${sec}`;
     },
     checkedMusicItem(music) {
-      if (this.activeMusicItem === this.musicList.indexOf(music)) return;
+      if (this.activeMusicItem === this.localMusicList.indexOf(music)) return;
       this.$emit("checkedMusic", music);
-      this.currentMusicItem = this.musicList[this.musicList.indexOf(music)];
+      this.currentMusicItem = this.localMusicList[
+        this.localMusicList.indexOf(music)
+      ];
       this.activeTitle = music.title;
-      this.activeMusicItem = this.musicList.indexOf(music);
+      this.activeMusicItem = this.localMusicList.indexOf(music);
       this.onPlay();
     },
     shiftMusic(type) {
-      let index = this.musicList.indexOf(this.currentMusicItem);
-      let musicListLength = this.musicList.length;
+      let index = this.localMusicList.indexOf(this.currentMusicItem);
+      let musicListLength = this.localMusicList.length;
       if (type === "pre") {
         if (index === -1) index = 0;
         let newIndex = (index - 1 + musicListLength) % musicListLength;
-        this.$emit("SwitchMusic", this.musicList[newIndex]);
-        this.currentMusicItem = this.musicList[newIndex];
+        this.$emit("SwitchMusic", this.localMusicList[newIndex]);
+        this.currentMusicItem = this.localMusicList[newIndex];
         this.activeTitle = this.currentMusicItem.title;
-        this.activeMusicItem = this.musicList.indexOf(this.currentMusicItem);
+        this.activeMusicItem = this.localMusicList.indexOf(
+          this.currentMusicItem
+        );
         this.onPlay();
       }
       if (type === "next") {
         if (index === -1) index = 0;
         let newIndex = (index + 1) % musicListLength;
-        this.$emit("SwitchMusic", this.musicList[newIndex]);
-        this.currentMusicItem = this.musicList[newIndex];
+        this.$emit("SwitchMusic", this.localMusicList[newIndex]);
+        this.currentMusicItem = this.localMusicList[newIndex];
         this.activeTitle = this.currentMusicItem.title;
-        this.activeMusicItem = this.musicList.indexOf(this.currentMusicItem);
+        this.activeMusicItem = this.localMusicList.indexOf(
+          this.currentMusicItem
+        );
         this.onPlay();
       }
+    },
+    toggleVoice() {
+      this.isVoice = !this.isVoice;
+      if (!this.isVoice) {
+        this.beforeSilenceVol = this.volume / 100; //this.volum是进度条的百分比值，真实的音量值是 0-1之间的小数值，所以要除以100
+        this.changeVolumeHandler(0);
+      } else {
+        this.changeVolumeHandler(this.beforeSilenceVol);
+      }
+    },
+    volumeIsTrue() {
+      this.isVoice = true;
     }
   },
   mounted() {},
+  watch: {
+    musicList(val) {
+      this.localMusicList = val;
+      this.activeTitle = this.localMusicList[0].title;
+    }
+  },
   activated() {
     this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.listenListWrapper, { click: true });
     });
-    // this.activeTitle = this.musicList[0].title;
-    this.activeTitle = "余波荡漾"; //上面那张方式获取有bug，目前暂时先写死，如果要更新音乐，记住这里同步更新
     this.activeMusicItem = 0;
-    this.currentMusicItem = this.musicList;
+    this.currentMusicItem = this.localMusicList;
     $("#player").bind($.jPlayer.event.timeupdate, e => {
       this.duration = e.jPlayer.status.duration; //获取音频总时长
-      this.volume = e.jPlayer.options.volume * 100;
+      this.volume = e.jPlayer.options.volume * 100; // this.volum介于1-100之间
       let _progress = e.jPlayer.status.currentPercentAbsolute;
       this.progressbar = _progress;
       this.runTime = this.formatTime(
@@ -153,11 +180,16 @@ export default {
       //绑定一个事件，在音乐结束的时候，自动切换到下一首
       this.shiftMusic("next");
     });
+    $("#player").bind($.jPlayer.event.volumechange, e => {
+      //当调节音量的时候触发此jplayer方法！！！
+      this.volume = e.jPlayer.options.volume * 100; // this.volum介于1-100之间
+    });
   },
   deactivated() {
     this.isplay = false;
     $("#player").unbind($.jPlayer.event.timeupdate);
     $("#player").unbind($.jPlayer.event.ended);
+    $("#player").unbind($.jPlayer.event.volumechange);
   }
 };
 </script>
@@ -249,6 +281,17 @@ export default {
       background-image: url('/static/img/volume.png');
       background-size: cover;
       background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    .icon-silence-volume {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      background-image: url('/static/img/silence.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
     }
 
     .volume-wrapper {
