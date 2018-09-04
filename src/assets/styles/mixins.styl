@@ -39,11 +39,27 @@ scrollBarStyle()
 titleFontFamily()
   @font-face
     font-family: titleFont;
-    src: url-loader('/src/assets/font/RachelRoman.svg') format('svg'),
-         url-loader('/src/assets/font/RachelRoman.ttf') format('truetype')
+    src: url('/static/fonts/RachelRoman.svg') format('svg'),
+         url('/static/fonts/RachelRoman.ttf') format('truetype')
     font-weight: normal;
     font-style: normal;
 newsTitleFamily()
   @font-face
     font-family: newsTitleFont;
-    src: url-loader('/src/assets/font/gur.ttf') format('truetype')
+    src: url('/static/fonts/gur.ttf') format('truetype')
+    font-weight: normal;
+    font-style: normal;
+navFontFamily()
+  @font-face
+    font-family: navFont;
+    src: url('/static/fonts/SF-UI-Display-Regular.otf') format('opentype')
+    font-weight: normal;
+    font-style: normal;
+timeTitleFamily()
+  @font-face
+      font-family: timeTitle;
+      src: url('/static/fonts/TimesBQ-Italic.ttf') format('truetype'),
+           url('/static/fonts/TimesBQ-Italic.svg') format('svg'),
+           url('/static/fonts/TimesBQ-Italic.otf') format('opentype')
+      font-weight: normal;
+      font-style: normal;

@@ -78,6 +78,8 @@ export default {
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
 
+timeTitleFamily();
+
 // scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
 .basement {
   margin-top: 126px;
@@ -140,11 +142,12 @@ export default {
 
         .time-title {
           font-size: 18px;
-          // font-family: 'timeTitleFont';
+          font-family: timeTitle;
           padding-top: 20px;
         }
 
         .text-title {
+          font-family: 'Times New Roman';
           font-size: 20px;
           padding: 15px 0;
           color: $Probrown;

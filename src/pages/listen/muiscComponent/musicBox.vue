@@ -182,7 +182,7 @@ export default {
     });
     $("#player").bind($.jPlayer.event.volumechange, e => {
       //当调节音量的时候触发此jplayer方法！！！
-      this.volume = e.jPlayer.options.volume * 100; // this.volum介于1-100之间
+      this.volume = e.jPlayer.options.volume * 100; // this.volum介于1-100之间，这里是真正的音量被调节的地方
     });
   },
   deactivated() {

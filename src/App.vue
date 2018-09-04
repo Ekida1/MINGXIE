@@ -96,9 +96,9 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl';
 @import '~styles/mixins.styl';
-@import '~styles/font.css';
 
 titleFontFamily();
+navFontFamily();
 
 #app >>> .navbar-dark .navbar-toggler-icon {
   background-image: url('/static/img/menu.png');
@@ -128,6 +128,7 @@ titleFontFamily();
   }
 
   .header-item {
+    // font-family: navFont;
     padding: 0 20px;
     border: 0 2px solid #ffffff;
 
