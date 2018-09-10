@@ -1,8 +1,8 @@
 <template>
 <div class="basement">
    <div class="contact-img"></div>
-     <div class="text-box">
-       <div class="contact-wrapper">
+     <div class="text-box animation-fade-up">
+       <div class="contact-wrapper ">
        <div class="contact-top">
        <div style="color: #7D734E">For France Benlgium Luxembourg Switzerland/Spain/Greece</div>
        <div class="contact-info">
@@ -113,6 +113,13 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
     }
   }
 
+  .animation-fade-up {
+    animation: fadeInUp 1000ms;
+    -webkit-animation: fadeInUp 1000ms;
+    -moz-animation: fadeInUp 1000ms;
+    -ms-animation: fadeInUp 1000ms;
+  }
+
   .instagram {
     position: absolute;
     right: 257px;
@@ -164,6 +171,19 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
     background-image: url('/static/img/soundcloud.png');
     background-repeat: no-repeat;
     background-size: 100%;
+  }
+}
+
+/* 淡入-从下up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
