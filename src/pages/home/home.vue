@@ -21,7 +21,8 @@ export default {
     height: 100vh;
     background-image: url('/static/img/newnewhome.png');
     background-repeat: no-repeat;
-    background-size: 1536px 659px;
+    // 1536px 659px;
+    background-size: 100%;
     background-position: 0px 87px;
   }
 

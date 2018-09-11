@@ -166,10 +166,4 @@ scrollBarStyle(); // 引用全局样式方法，改变滑动条的样式
     }
   }
 }
-
-@media screen and (min-height: 750px) {
-  .text-box {
-    top: -350px !important;
-  }
-}
 </style>
