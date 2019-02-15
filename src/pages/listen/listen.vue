@@ -1,9 +1,14 @@
 <template>
-<div class="basement">
-  <div class="listen-img"></div>
-  <div id="player"></div>
-  <music-box class="muisc-box animation-fade-up" :musicList="musicList" @checkedMusic="playMusic" @SwitchMusic="playMusic"></music-box>
-</div>
+  <div class="basement">
+    <div class="listen-img"></div>
+    <div id="player"></div>
+    <music-box
+      class="muisc-box animation-fade-up"
+      :musicList="musicList"
+      @checkedMusic="playMusic"
+      @SwitchMusic="playMusic"
+    ></music-box>
+  </div>
 </template>
 <script>
 import musicBox from "./muiscComponent/musicBox";
@@ -36,15 +41,17 @@ export default {
   mounted() {},
   activated() {
     getMusicFile()
-      .then(res => {
-        if (res.success && res.data) {
-          const data = res.data;
-          this.musicList = data.musicList;
-        }
+      .then(
+        res => {
+          if (res.success && res.data) {
+            const data = res.data;
+            this.musicList = data.musicList;
+          }
+        },
         err => {
           console.log("获取音乐信息失败，失败报错:", err);
-        };
-      })
+        }
+      )
       .then(() => {
         $("#player").jPlayer({
           supplied: "mp3", //默认支持MP3 M4A

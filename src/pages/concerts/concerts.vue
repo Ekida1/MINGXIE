@@ -1,48 +1,64 @@
 <template>
-<div class="basement">
-  <div class="concerts-img"></div>
-  <div class="text-box">
-    <div class="options-header">
-      <div class="left-option" :class="{'active-option': 'upComing' === headerOptions }" @click="checkedOptions('upComing')">UpComing</div>
-      <div class="right-option" :class="{'active-option': 'PastEvent' === headerOptions }" @click="checkedOptions('PastEvent')">Past Events</div>
-    </div>
-    <ul class="tickets-list" v-show="'upComing' === headerOptions">
-      <li class="ticket-item animation-fade-up" v-for="ticket in upComingTicketsList" :key="ticket.id">
-        <div class="time-title">{{ticket.timeTitle || ""}}</div>
-        <div class="text-title">{{ticket.textTitle || ""}}</div>
-        <div class="location-title">{{ticket.location || ""}}</div>
-        <div class="text-content">
-          <p>{{ticket.textContent1 || ""}}</p>
-          <p>{{ticket.textContent2 || ""}}</p>
-          <p>{{ticket.textContent3 || ""}}</p>
-          <p>{{ticket.textContent4 || ""}}</p>
-        </div>
+  <div class="basement">
+    <div class="concerts-img"></div>
+    <div class="text-box">
+      <div class="options-header">
+        <div
+          class="left-option"
+          :class="{'active-option': 'upComing' === headerOptions }"
+          @click="checkedOptions('upComing')"
+        >UpComing</div>
+        <div
+          class="right-option"
+          :class="{'active-option': 'PastEvent' === headerOptions }"
+          @click="checkedOptions('PastEvent')"
+        >Past Events</div>
+      </div>
+      <ul class="tickets-list" v-show="'upComing' === headerOptions">
+        <li
+          class="ticket-item animation-fade-up"
+          v-for="ticket in upComingTicketsList"
+          :key="ticket.id"
+        >
+          <div class="time-title">{{ticket.timeTitle || ""}}</div>
+          <div class="text-title">{{ticket.textTitle || ""}}</div>
+          <div class="location-title">{{ticket.location || ""}}</div>
+          <div class="text-content">
+            <p>{{ticket.textContent1 || ""}}</p>
+            <p>{{ticket.textContent2 || ""}}</p>
+            <p>{{ticket.textContent3 || ""}}</p>
+            <p>{{ticket.textContent4 || ""}}</p>
+          </div>
 
-        <div class="tickets-btn-wrapper">
-         <a class="tickets-btn" :href='ticket.link'>Ticket</a>
-        </div>
-      </li>
-    </ul>
-    <ul class="tickets-list" v-show="'PastEvent' === headerOptions">
-  <li class="ticket-item animation-fade-up" v-for="ticket in pastTicketsList" :key="ticket.id">
-        <div class="time-title">{{ticket.timeTitle || ""}}</div>
-        <div class="text-title">{{ticket.textTitle || ""}}</div>
-        <div class="location-title">{{ticket.location || ""}}</div>
-        <div class="text-content">
-          <p>{{ticket.textContent1 || ""}}</p>
-          <p>{{ticket.textContent2 || ""}}</p>
-          <p>{{ticket.textContent3 || ""}}</p>
-          <p>{{ticket.textContent4 || ""}}</p>
-        </div>
-    <div class="tickets-btn-wrapper">
-    <div class="left-triangle"></div>
-    <a class="tickets-btn" :href='ticket.link'>Ticket</a>
-    <div class="right-triangle"></div>
+          <div class="tickets-btn-wrapper">
+            <a class="tickets-btn" :href="ticket.link">Ticket</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="tickets-list" v-show="'PastEvent' === headerOptions">
+        <li
+          class="ticket-item animation-fade-up"
+          v-for="ticket in pastTicketsList"
+          :key="ticket.id"
+        >
+          <div class="time-title">{{ticket.timeTitle || ""}}</div>
+          <div class="text-title">{{ticket.textTitle || ""}}</div>
+          <div class="location-title">{{ticket.location || ""}}</div>
+          <div class="text-content">
+            <p>{{ticket.textContent1 || ""}}</p>
+            <p>{{ticket.textContent2 || ""}}</p>
+            <p>{{ticket.textContent3 || ""}}</p>
+            <p>{{ticket.textContent4 || ""}}</p>
+          </div>
+          <div class="tickets-btn-wrapper">
+            <div class="left-triangle"></div>
+            <a class="tickets-btn" :href="ticket.link">Ticket</a>
+            <div class="right-triangle"></div>
+          </div>
+        </li>
+      </ul>
     </div>
-  </li>
-</ul>
   </div>
-</div>
 </template>
 <script>
 import { getConcertsInfo } from "common/request/request";
@@ -61,16 +77,18 @@ export default {
     }
   },
   created() {
-    getConcertsInfo().then(res => {
-      if (res.success && res.data) {
-        const data = res.data;
-        this.upComingTicketsList = data.upComingTicketsList;
-        this.pastTicketsList = data.pastTicketsList;
-      }
+    getConcertsInfo().then(
+      res => {
+        if (res.success && res.data) {
+          const data = res.data;
+          this.upComingTicketsList = data.upComingTicketsList;
+          this.pastTicketsList = data.pastTicketsList;
+        }
+      },
       err => {
         reject(err);
-      };
-    });
+      }
+    );
   }
 };
 </script>

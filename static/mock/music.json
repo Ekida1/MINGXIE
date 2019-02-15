@@ -3,125 +3,28 @@
   "data": {
     "musicList": [{
       "id": 1,
-      "title": "余波荡漾",
-      "artist": "田馥甄",
-      "file": "/static/music/余波荡漾.mp3",
+      "title": "L'aérogramme de Los Angeles",
+      "artist": "Louis Garrel,Woodkid",
+      "file": "/static/music/Louis Garrel,Woodkid - L'aérogramme de Los Angeles.mp3",
       "cid": "26310839"
     }, {
       "id": 2,
-      "title": "American (feat. The Cast of RuPau American (feat. The Cast of RuPau American (feat. The Cast of RuPau",
-      "artist": "Ariana Grande",
-      "file": "/static/music/American (feat. The Cast of RuPau.m4a",
+      "title": "Ending Theme",
+      "artist": "菅野よう子",
+      "file": "/static/music/菅野よう子 - Ending Theme.mp3",
       "cid": "26745167"
     }, {
       "id": 3,
-      "title": "Too Good to Goodbyes",
-      "artist": "Sam Smith",
-      "file": "/static/music/Too Good to Goodbyes.mp3",
+      "title": "Brooklyn",
+      "artist": "Woodkid",
+      "file": "/static/music/Woodkid - Brooklyn.mp3",
       "cid": "26745167"
     }, {
       "id": 4,
-      "title": "0932",
-      "artist": "陈小春",
-      "file": "/static/music/0932.mp3",
+      "title": "The Golden Age",
+      "artist": "Woodkid",
+      "file": "/static/music/Woodkid - The Golden Age.mp3",
       "cid": "1466246"
-    }, {
-      "id": 5,
-      "title": "Rhiannon",
-      "artist": "Fleetwood Mac",
-      "file": "/static/music/Rhiannon.mp3",
-      "cid": "1851993"
-    }, {
-      "id": 6,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 7,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 8,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 9,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 10,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 11,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 12,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 13,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 14,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 15,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 16,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 17,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 18,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 19,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
-    }, {
-      "id": 20,
-      "title": "恋我癖",
-      "artist": "蔡依林",
-      "file": "/static/music/恋我癖.mp3",
-      "cid": "26669586"
     }]
-
   }
 }
