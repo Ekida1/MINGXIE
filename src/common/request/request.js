@@ -5,7 +5,7 @@ import Vue from 'vue'
 function getonStagePhotosListData() {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/onstage.json",
+      url: "./static/mock/onstage.json",
       methods: "GET"
     }).then(
       res => {
@@ -22,7 +22,7 @@ function getonStagePhotosListData() {
 function getoffStagePhotosListData() {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/offstage.json",
+      url: "./static/mock/offstage.json",
       methods: "GET"
     }).then(
       res => {
@@ -39,7 +39,7 @@ function getoffStagePhotosListData() {
 function getVisonPhotosListData() {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/vision.json",
+      url: "./static/mock/vision.json",
       methods: "GET"
     }).then(
       res => {
@@ -56,7 +56,7 @@ function getVisonPhotosListData() {
 function getNewsListData() {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/news.json",
+      url: "./static/mock/news.json",
       methods: "GET"
     }).then(
       res => {
@@ -73,7 +73,7 @@ function getNewsListData() {
 function getDetailData(id) {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/detail" + id + ".json",
+      url: "./static/mock/detail" + id + ".json",
       methods: "GET"
     }).then(
       res => {
@@ -90,7 +90,7 @@ function getDetailData(id) {
 function getReviewsListData() {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/reviews.json",
+      url: "./static/mock/reviews.json",
       methods: "GET"
     }).then(
       res => {
@@ -107,7 +107,7 @@ function getReviewsListData() {
 function getAboutText() {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/about.json",
+      url: "./static/mock/about.json",
       methods: "GET"
     }).then(
       res => {
@@ -124,7 +124,7 @@ function getAboutText() {
 function getConcertsInfo() {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/concerts.json",
+      url: "./static/mock/concerts.json",
       methods: "GET"
     }).then(
       res => {
@@ -141,7 +141,7 @@ function getConcertsInfo() {
 function getMusicFile() {
   return new Promise((resolve, reject) => {
     Vue.http({
-      url: "./api/music.json",
+      url: "./static/mock/music.json",
       methods: "GET"
     }).then(
       res => {
